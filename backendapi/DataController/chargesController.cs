@@ -18,6 +18,7 @@ namespace backendapi.DataController
     public class chargesController : ApiController
     {
         static readonly charges_repository charges_repo = new charges_repository();
+        private APIEntities db = new APIEntities();
 
         //[Route("charges")]
         //public IHttpActionResult GetCharges()
@@ -29,8 +30,6 @@ namespace backendapi.DataController
         [Route("charges")]
         public async Task<IHttpActionResult> GetCharges(int pageno = 1, int pagesize = 2)
         {
-            using (ITWorksDEVEntities db = new ITWorksDEVEntities())
-            {
                 bool successful = false;
                 int retry = 0;
                 while (!successful && retry < 3)
@@ -54,7 +53,6 @@ namespace backendapi.DataController
                         retry++;
                     }
                 }
-            }
 
             return Ok(new Exception("Database is refreshing"));   
         }
@@ -89,8 +87,6 @@ namespace backendapi.DataController
         [Route("charges/total_amount/{pvid}")]
         public IHttpActionResult GetTotalCharge(Guid pvid)
         {
-            ITWorksDEVEntities db = new ITWorksDEVEntities();
-
             decimal total = (decimal)(db.webapi_patient_charges.Where(a => a.patient_visit_id == pvid).Sum(a => a.amount));
 
             return Ok(total);
@@ -100,7 +96,6 @@ namespace backendapi.DataController
         [Authorize]
         public async Task<IHttpActionResult> GetChargesFilter(int offset = 0, int limit = 0)
         {
-            ITWorksDEVEntities db = new ITWorksDEVEntities();
             int total = db.webapi_patient_charges.Count();
             var pat = await db.webapi_patient_charges.OrderBy(p => p.hospital_number).Skip(offset).Take(limit).ToListAsync();
             return Ok(new

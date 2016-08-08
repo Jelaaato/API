@@ -11,14 +11,12 @@ namespace backendapi.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class webapi_patient_allergy
     {
         public System.Guid patient_id { get; set; }
         public Nullable<System.Guid> patient_allergy_id { get; set; }
         public string hospital_number { get; set; }
-        [DataType(DataType.Date)]
         public Nullable<System.DateTime> registration_date { get; set; }
         public string allergen { get; set; }
         public string allergen_type_rcd { get; set; }

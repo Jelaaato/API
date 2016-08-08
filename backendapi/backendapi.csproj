@@ -1022,22 +1022,22 @@
       <DependentUpon>refModel.edmx</DependentUpon>
       <LastGenOutput>refModel.cs</LastGenOutput>
     </Content>
-    <EntityDeploy Include="Models\apiModel.edmx">
+    <EntityDeploy Include="Models\APIEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>apiModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>APIEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\apiModel.Context.tt">
+    <Content Include="Models\APIEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>apiModel.edmx</DependentUpon>
-      <LastGenOutput>apiModel.Context.cs</LastGenOutput>
+      <DependentUpon>APIEntities.edmx</DependentUpon>
+      <LastGenOutput>APIEntities.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\apiModel.edmx.diagram">
-      <DependentUpon>apiModel.edmx</DependentUpon>
+    <Content Include="Models\APIEntities.edmx.diagram">
+      <DependentUpon>APIEntities.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\apiModel.tt">
+    <Content Include="Models\APIEntities.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>apiModel.edmx</DependentUpon>
-      <LastGenOutput>apiModel.cs</LastGenOutput>
+      <DependentUpon>APIEntities.edmx</DependentUpon>
+      <LastGenOutput>APIEntities.cs</LastGenOutput>
     </Content>
     <None Include="Properties\PublishProfiles\API.pubxml" />
     <None Include="Properties\PublishProfiles\APIPublish.pubxml" />
@@ -1102,23 +1102,20 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\apiModel.Context.cs">
+    <Compile Include="Models\APIEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>apiModel.Context.tt</DependentUpon>
+      <DependentUpon>APIEntities.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\apiModel.cs">
+    <Compile Include="Models\APIEntities.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>apiModel.tt</DependentUpon>
+      <DependentUpon>APIEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\apiModel.Designer.cs">
+    <Compile Include="Models\APIEntities.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>apiModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\api_sample.cs">
-      <DependentUpon>sample.tt</DependentUpon>
+      <DependentUpon>APIEntities.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\AuthContext.cs" />
     <Compile Include="Models\AuthRepository.cs" />
@@ -1163,22 +1160,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>refModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\sample.Context.cs">
-      <DependentUpon>sample.Context.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Models\sample.cs">
-      <DependentUpon>sample.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Models\sample.Designer.cs">
-      <DependentUpon>sample.edmx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Models\SampleRepository.cs" />
     <Compile Include="Models\sex_ref.cs">
       <DependentUpon>refModel.tt</DependentUpon>
     </Compile>
@@ -1187,43 +1168,43 @@
       <DependentUpon>refModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\webapi_patient_allergy.cs">
-      <DependentUpon>apiModel.tt</DependentUpon>
+      <DependentUpon>APIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\webapi_patient_basic_info.cs">
-      <DependentUpon>apiModel.tt</DependentUpon>
+      <DependentUpon>APIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\webapi_patient_business_address.cs">
-      <DependentUpon>apiModel.tt</DependentUpon>
+      <DependentUpon>APIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\webapi_patient_business_phone.cs">
-      <DependentUpon>apiModel.tt</DependentUpon>
+      <DependentUpon>APIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\webapi_patient_charges.cs">
-      <DependentUpon>apiModel.tt</DependentUpon>
+      <DependentUpon>APIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\webapi_patient_email_add.cs">
-      <DependentUpon>apiModel.tt</DependentUpon>
+      <DependentUpon>APIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\webapi_patient_family_history.cs">
-      <DependentUpon>apiModel.tt</DependentUpon>
+      <DependentUpon>APIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\webapi_patient_home_address.cs">
-      <DependentUpon>apiModel.tt</DependentUpon>
+      <DependentUpon>APIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\webapi_patient_home_phone.cs">
-      <DependentUpon>apiModel.tt</DependentUpon>
+      <DependentUpon>APIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\webapi_patient_medical_history.cs">
-      <DependentUpon>apiModel.tt</DependentUpon>
+      <DependentUpon>APIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\webapi_patient_mobile_phone.cs">
-      <DependentUpon>apiModel.tt</DependentUpon>
+      <DependentUpon>APIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\webapi_patient_previous_surgeries.cs">
-      <DependentUpon>apiModel.tt</DependentUpon>
+      <DependentUpon>APIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\webapi_patient_services_availed.cs">
-      <DependentUpon>apiModel.tt</DependentUpon>
+      <DependentUpon>APIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\RefreshTokenProvider.cs" />
@@ -1242,23 +1223,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <EntityDeploy Include="Models\sample.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>sample.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\sample.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>sample.edmx</DependentUpon>
-      <LastGenOutput>sample.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\sample.edmx.diagram">
-      <DependentUpon>sample.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\sample.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>sample.edmx</DependentUpon>
-      <LastGenOutput>sample.cs</LastGenOutput>
-    </Content>
     <None Include="Properties\PublishProfiles\SPublish.pubxml" />
     <Content Include="Scripts\version.json" />
     <Content Include="Scripts\errors.json" />

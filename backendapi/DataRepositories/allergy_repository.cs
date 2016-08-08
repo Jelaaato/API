@@ -8,7 +8,7 @@ namespace backendapi.DataRepositories
 {
     public class allergy_repository
     {
-        private ITWorksDEVEntities db = new ITWorksDEVEntities();
+        private APIEntities db = new APIEntities();
 
         public IEnumerable<webapi_patient_allergy> patient_allergy()
         {

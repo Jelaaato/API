@@ -10,7 +10,7 @@ namespace backendapi.DataRepositories
 {
     public class charges_repository
     {
-        private ITWorksDEVEntities db = new ITWorksDEVEntities();
+        private APIEntities db = new APIEntities();
 
         public IEnumerable<webapi_patient_charges> charges()
         {

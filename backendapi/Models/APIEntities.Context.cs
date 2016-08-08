@@ -13,15 +13,15 @@ namespace backendapi.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ITWorksDEVEntities : DbContext
+    public partial class APIEntities : DbContext
     {
-        public ITWorksDEVEntities()
-            : base("name=ITWorksDEVEntities")
+        public APIEntities()
+            : base("name=APIEntities")
         {
-            this.SetCommandTimeOut(300);
+            this.SetCommandTimeout(300);
         }
 
-        public void SetCommandTimeOut(int timeout)
+        public void SetCommandTimeout(int timeout)
         {
             var objContext = (this as IObjectContextAdapter).ObjectContext;
             objContext.CommandTimeout = timeout;

@@ -17,13 +17,12 @@ namespace backendapi.DataController
     public class contactsController : ApiController
     {
         static readonly contacts_repository con_repo = new contacts_repository();
+        private APIEntities db = new APIEntities();
 
         [Authorize]
         [Route("contacts/business")]
         public async Task<IHttpActionResult> GetBusinessPhone(int pageno = 1, int pagesize = 10)
         {
-            ITWorksDEVEntities db = new ITWorksDEVEntities();
-
             bool successful = false;
             int retry = 0;
             while (!successful && retry < 3)
@@ -80,7 +79,6 @@ namespace backendapi.DataController
         [Authorize]
         public async Task<IHttpActionResult> GetBusPhFilter(int offset = 0, int limit = 0)
         {
-            ITWorksDEVEntities db = new ITWorksDEVEntities();
             int total = db.webapi_patient_business_phone.Count();
             var pat = await db.webapi_patient_business_phone.OrderBy(p => p.hospital_number).Skip(offset).Take(limit).ToListAsync();
             return Ok(new
@@ -100,8 +98,6 @@ namespace backendapi.DataController
         [Route("contacts/home")]
         public async Task<IHttpActionResult> GetHomePhone(int pageno = 1, int pagesize = 10)
         {
-            ITWorksDEVEntities db = new ITWorksDEVEntities();
-
             bool successful = false;
             int retry = 0;
             while (!successful && retry < 3)
@@ -158,7 +154,6 @@ namespace backendapi.DataController
         [Authorize]
         public async Task<IHttpActionResult> GetHomePhFilter(int offset = 0, int limit = 0)
         {
-            ITWorksDEVEntities db = new ITWorksDEVEntities();
             int total = db.webapi_patient_home_phone.Count();
             var pat = await db.webapi_patient_home_phone.OrderBy(p => p.hospital_number).Skip(offset).Take(limit).ToListAsync();
             return Ok(new
@@ -178,8 +173,6 @@ namespace backendapi.DataController
         [Route("contacts/mobile")]
         public async Task<IHttpActionResult> GetMobilePhone(int pageno = 1, int pagesize = 10)
         {
-            ITWorksDEVEntities db = new ITWorksDEVEntities();
-
             bool successful = false;
             int retry = 0;
             while (!successful && retry < 3)
@@ -236,7 +229,6 @@ namespace backendapi.DataController
         [Authorize]
         public async Task<IHttpActionResult> GetMobileFilter(int offset = 0, int limit = 0)
         {
-            ITWorksDEVEntities db = new ITWorksDEVEntities();
             int total = db.webapi_patient_mobile_phone.Count();
             var pat = await db.webapi_patient_mobile_phone.OrderBy(p => p.hospital_number).Skip(offset).Take(limit).ToListAsync();
             return Ok(new

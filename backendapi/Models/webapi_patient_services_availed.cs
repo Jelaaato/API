@@ -11,7 +11,6 @@ namespace backendapi.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class webapi_patient_services_availed
     {
@@ -19,7 +18,6 @@ namespace backendapi.Models
         public System.Guid patient_visit_id { get; set; }
         public System.Guid patient_id { get; set; }
         public string hospital_number { get; set; }
-        [DataType(DataType.Date)]
         public Nullable<System.DateTime> registration_date { get; set; }
         public string primary_service_rcd { get; set; }
         public string primary_service_name { get; set; }

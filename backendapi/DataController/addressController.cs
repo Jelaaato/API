@@ -19,13 +19,12 @@ namespace backendapi.DataController
     {
         
         static readonly address_repository add_repo = new address_repository();
+        private APIEntities db = new APIEntities();
 
         [Authorize]
         [Route("address/business")]
         public async Task<IHttpActionResult> GetBusinessAd(int pageno = 1, int pagesize = 10)
         {
-            ITWorksDEVEntities db = new ITWorksDEVEntities();
-
             bool successful = false;
             int retry = 0;
             while (!successful && retry < 3)
@@ -88,8 +87,6 @@ namespace backendapi.DataController
         [Route("address/business/filter")]
         public async Task<IHttpActionResult> GetBusAdFilter(int offset = 0, int limit = 0)
         {
-            ITWorksDEVEntities db = new ITWorksDEVEntities();
-
             int total = db.webapi_patient_business_address.Count();
             var pat = await db.webapi_patient_business_address.OrderBy(p => p.hospital_number).Skip(offset).Take(limit).ToListAsync();
             return Ok(new
@@ -109,8 +106,6 @@ namespace backendapi.DataController
         [Route("address/home")]
         public async Task<IHttpActionResult> GetHomeAd(int pageno = 1, int pagesize = 10)
         {
-            ITWorksDEVEntities db = new ITWorksDEVEntities();
-            
             bool successful = false;
             int retry = 0;
             while (!successful && retry < 3)
@@ -167,7 +162,6 @@ namespace backendapi.DataController
         [Route("address/home/filter")]
         public async Task<IHttpActionResult> GetHomeAdFilter(int offset = 0, int limit = 0)
         {
-            ITWorksDEVEntities db = new ITWorksDEVEntities();
             int total = db.webapi_patient_home_address.Count();
             var pat = await db.webapi_patient_home_address.OrderBy(p => p.hospital_number).Skip(offset).Take(limit).ToListAsync();
             return Ok(new

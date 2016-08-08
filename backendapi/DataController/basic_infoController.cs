@@ -17,8 +17,7 @@ namespace backendapi.DataController
     public class basic_infoController : ApiController
     {
         static readonly basic_info_repository basic_info_repo = new basic_info_repository();
-        private ITWorksDEVEntities db = new ITWorksDEVEntities();
-
+        private APIEntities db = new APIEntities();
 
         [Authorize]
         [Route("basic_info")]

@@ -11,7 +11,6 @@ namespace backendapi.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class webapi_patient_charges
     {
@@ -20,7 +19,6 @@ namespace backendapi.Models
         public System.Guid charge_detail_id { get; set; }
         public System.Guid patient_visit_id { get; set; }
         public string hospital_number { get; set; }
-        [DataType(DataType.Date)]
         public Nullable<System.DateTime> registration_date { get; set; }
         public decimal unit_price { get; set; }
         public Nullable<decimal> quantity { get; set; }

@@ -8,7 +8,7 @@ namespace backendapi.DataRepositories
 {
     public class basic_info_repository
     {
-        private ITWorksDEVEntities db = new ITWorksDEVEntities();
+        private APIEntities db = new APIEntities();
         
         public IEnumerable<webapi_patient_basic_info> basic_info()
         {

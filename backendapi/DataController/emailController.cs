@@ -16,15 +16,13 @@ namespace backendapi.DataController
     [RoutePrefix("patients")]
     public class emailController : ApiController
     {
-
         static readonly email_repository email_repo = new email_repository();
+        private APIEntities db = new APIEntities();
 
         [Authorize]
         [Route("contacts/email")]
         public async Task<IHttpActionResult> GetEAd(int pageno = 1, int pagesize = 10)
         {
-            ITWorksDEVEntities db = new ITWorksDEVEntities();
-
             bool successful = false;
             int retry = 0;
             while (!successful && retry < 3)
@@ -81,7 +79,6 @@ namespace backendapi.DataController
         [Authorize]
         public async Task<IHttpActionResult> GetEAdFilter(int offset = 0, int limit = 0)
         {
-            ITWorksDEVEntities db = new ITWorksDEVEntities();
             int total = db.webapi_patient_email_add.Count();
             var pat = await db.webapi_patient_email_add.OrderBy(p => p.hospital_number).Skip(offset).Take(limit).ToListAsync();
             return Ok(new

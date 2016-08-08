@@ -11,13 +11,11 @@ namespace backendapi.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class webapi_patient_home_address
     {
         public System.Guid patient_id { get; set; }
         public string hospital_number { get; set; }
-        [DataType(DataType.Date)]
         public Nullable<System.DateTime> registration_date { get; set; }
         public string residence_country_rcd { get; set; }
         public string residence_country_name { get; set; }

@@ -9,7 +9,7 @@ namespace backendapi.DataRepositories
 {
     public class email_repository
     {
-        private ITWorksDEVEntities db = new ITWorksDEVEntities();
+        private APIEntities db = new APIEntities();
 
         public IEnumerable<webapi_patient_email_add> email_ad()
         {

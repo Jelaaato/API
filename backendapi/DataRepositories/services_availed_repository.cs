@@ -9,7 +9,7 @@ namespace backendapi.DataRepositories
 {
     public class services_availed_repository
     {
-        private ITWorksDEVEntities db = new ITWorksDEVEntities();
+        private APIEntities db = new APIEntities();
 
         public IEnumerable<webapi_patient_services_availed> services_availed()
         {

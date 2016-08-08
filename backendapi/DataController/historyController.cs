@@ -17,13 +17,12 @@ namespace backendapi.DataController
     public class historyController : ApiController
     {
         static readonly history_repository hist_repo = new history_repository();
+        private APIEntities db = new APIEntities();
 
         [Authorize]
         [Route("history/family")]
         public async Task<IHttpActionResult> GetFamilyHis(int pageno = 1, int pagesize = 10)
         {
-            ITWorksDEVEntities db = new ITWorksDEVEntities();
-
             bool successful = false;
             int retry = 0;
             while (!successful && retry < 3)
@@ -80,7 +79,6 @@ namespace backendapi.DataController
         [Authorize]
         public async Task<IHttpActionResult> GetFamFilter(int offset = 0, int limit = 0)
         {
-            ITWorksDEVEntities db = new ITWorksDEVEntities();
             int total = db.webapi_patient_family_history.Count();
             var pat = await db.webapi_patient_family_history.OrderBy(p => p.hospital_number).Skip(offset).Take(limit).ToListAsync();
             return Ok(new
@@ -100,8 +98,6 @@ namespace backendapi.DataController
         [Route("history/medical")]
         public async Task<IHttpActionResult> GetMedHis(int pageno = 1, int pagesize = 10)
         {
-            ITWorksDEVEntities db = new ITWorksDEVEntities();
-
             bool successful = false;
             int retry = 0;
             while (!successful && retry < 3)
@@ -158,7 +154,6 @@ namespace backendapi.DataController
         [Authorize]
         public async Task<IHttpActionResult> GetMedFilter(int offset = 0, int limit = 0)
         {
-            ITWorksDEVEntities db = new ITWorksDEVEntities();
             int total = db.webapi_patient_medical_history.Count();
             var pat = await db.webapi_patient_medical_history.OrderBy(p => p.hospital_number).Skip(offset).Take(limit).ToListAsync();
             return Ok(new
@@ -178,8 +173,6 @@ namespace backendapi.DataController
         [Route("history/surgical")]
         public async Task<IHttpActionResult> GetSurgHis(int pageno = 1, int pagesize = 10)
         {
-            ITWorksDEVEntities db = new ITWorksDEVEntities();
-
             bool successful = false;
             int retry = 0;
             while (!successful && retry < 3)
@@ -236,7 +229,6 @@ namespace backendapi.DataController
         [Authorize]
         public async Task<IHttpActionResult> GetSurgFilter(int offset = 0, int limit = 0)
         {
-            ITWorksDEVEntities db = new ITWorksDEVEntities();
             int total = db.webapi_patient_previous_surgeries.Count();
             var pat = await db.webapi_patient_previous_surgeries.OrderBy(p => p.hospital_number).Skip(offset).Take(limit).ToListAsync();
             return Ok(new

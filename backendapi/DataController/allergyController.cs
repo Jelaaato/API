@@ -17,13 +17,12 @@ namespace backendapi.DataController
     public class allergyController : ApiController
     {
         static readonly allergy_repository pat_allergy_repo = new allergy_repository();
+        private APIEntities db = new APIEntities();
 
         [Authorize]
         [Route("allergies")]
         public async Task<IHttpActionResult> GetAllergy(int pageno = 1, int pagesize = 10)
         {
-            ITWorksDEVEntities db = new ITWorksDEVEntities();
-
             bool successful = false;
             int retry = 0;
             while (!successful && retry < 3)
@@ -79,7 +78,6 @@ namespace backendapi.DataController
         [Route("allergies/filter")]
         public async Task<IHttpActionResult> GetAllergyFilter(int offset = 0, int limit = 0)
         {
-            ITWorksDEVEntities db = new ITWorksDEVEntities();
             int total = db.webapi_patient_allergy.Count();
             var pat = await db.webapi_patient_allergy.OrderBy(p => p.hospital_number).Skip(offset).Take(limit).ToListAsync();
             return Ok(new

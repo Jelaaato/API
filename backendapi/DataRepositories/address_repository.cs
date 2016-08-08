@@ -7,7 +7,7 @@ namespace backendapi.DataRepositories
 {
     public class address_repository
     {
-        private ITWorksDEVEntities db = new ITWorksDEVEntities();
+        private APIEntities db = new APIEntities();
 
         //Business Address
         public IEnumerable<webapi_patient_business_address> bus_ad()

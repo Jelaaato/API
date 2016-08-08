@@ -8,7 +8,7 @@ namespace backendapi.DataRepositories
 {
     public class contacts_repository
     {
-        private ITWorksDEVEntities db = new ITWorksDEVEntities();
+        private APIEntities db = new APIEntities();
 
         //Business Phone
         public IEnumerable<webapi_patient_business_phone> bus_phone()

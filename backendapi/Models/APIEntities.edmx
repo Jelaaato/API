@@ -4,9 +4,9 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="apiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="APIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
-warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_allergy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'HISViews.dbo.webapi_patient_allergy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="webapi_patient_allergy">
           <Key>
             <PropertyRef Name="patient_id" />
@@ -34,7 +34,7 @@ warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_allergy' does not ha
           <Property Name="allergy_reaction" Type="nvarchar" MaxLength="150" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_basic_info' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'HISViews.dbo.webapi_patient_basic_info' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="webapi_patient_basic_info">
           <Key>
             <PropertyRef Name="patient_id" />
@@ -69,7 +69,7 @@ warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_basic_info' does not
           <Property Name="occupation" Type="nvarchar" MaxLength="150" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_business_address' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'HISViews.dbo.webapi_patient_business_address' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="webapi_patient_business_address">
           <Key>
             <PropertyRef Name="patient_id" />
@@ -100,7 +100,7 @@ warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_business_address' do
           <Property Name="business_address_effective_until_date" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_business_phone' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'HISViews.dbo.webapi_patient_business_phone' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="webapi_patient_business_phone">
           <Key>
             <PropertyRef Name="patient_id" />
@@ -115,7 +115,7 @@ warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_business_phone' does
           <Property Name="business_phone_extension" Type="numeric" Precision="6" Scale="0" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_charges' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'HISViews.dbo.webapi_patient_charges' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="webapi_patient_charges">
           <Key>
             <PropertyRef Name="item_type_rcd" />
@@ -146,7 +146,7 @@ warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_charges' does not ha
           <Property Name="item_name" Type="nvarchar" MaxLength="450" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_email_add' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'HISViews.dbo.webapi_patient_email_add' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="webapi_patient_email_add">
           <Key>
             <PropertyRef Name="patient_id" />
@@ -160,7 +160,7 @@ warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_email_add' does not 
           <Property Name="personal_email_address" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_family_history' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'HISViews.dbo.webapi_patient_family_history' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="webapi_patient_family_history">
           <Key>
             <PropertyRef Name="patient_id" />
@@ -172,7 +172,7 @@ warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_family_history' does
           <Property Name="family_medical_history" Type="nvarchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_home_address' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'HISViews.dbo.webapi_patient_home_address' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="webapi_patient_home_address">
           <Key>
             <PropertyRef Name="patient_id" />
@@ -201,7 +201,7 @@ warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_home_address' does n
           <Property Name="home_address_effective_until_date" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_home_phone' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'HISViews.dbo.webapi_patient_home_phone' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="webapi_patient_home_phone">
           <Key>
             <PropertyRef Name="patient_id" />
@@ -216,7 +216,7 @@ warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_home_phone' does not
           <Property Name="home_phone_extension" Type="numeric" Precision="6" Scale="0" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_medical_history' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'HISViews.dbo.webapi_patient_medical_history' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="webapi_patient_medical_history">
           <Key>
             <PropertyRef Name="patient_id" />
@@ -228,7 +228,7 @@ warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_medical_history' doe
           <Property Name="medical_history" Type="nvarchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_mobile_phone' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'HISViews.dbo.webapi_patient_mobile_phone' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="webapi_patient_mobile_phone">
           <Key>
             <PropertyRef Name="patient_id" />
@@ -243,7 +243,7 @@ warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_mobile_phone' does n
           <Property Name="mobile_phone_extension" Type="numeric" Precision="6" Scale="0" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_previous_surgeries' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'HISViews.dbo.webapi_patient_previous_surgeries' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="webapi_patient_previous_surgeries">
           <Key>
             <PropertyRef Name="patient_id" />
@@ -255,7 +255,7 @@ warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_previous_surgeries' 
           <Property Name="previous_surgeries" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_services_availed' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'HISViews.dbo.webapi_patient_services_availed' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="webapi_patient_services_availed">
           <Key>
             <PropertyRef Name="charge_type_rcd" />
@@ -279,7 +279,7 @@ warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_services_availed' do
           <Property Name="Date_of_Availment" Type="date" />
           <Property Name="Time_of_Availment" Type="time" Precision="7" />
         </EntityType>
-        <EntityContainer Name="apiModelStoreContainer">
+        <EntityContainer Name="APIModelStoreContainer">
           <EntitySet Name="webapi_patient_allergy" EntityType="Self.webapi_patient_allergy" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [webapi_patient_allergy].[patient_id] AS [patient_id], 
@@ -475,7 +475,7 @@ warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_services_availed' do
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="apiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="APIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="webapi_patient_allergy">
           <Key>
             <PropertyRef Name="patient_id" />
@@ -724,7 +724,7 @@ warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_services_availed' do
           <Property Name="Date_of_Availment" Type="DateTime" Precision="0" />
           <Property Name="Time_of_Availment" Type="Time" Precision="7" />
         </EntityType>
-        <EntityContainer Name="ITWorksDEVEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="APIEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="webapi_patient_allergy" EntityType="Self.webapi_patient_allergy" />
           <EntitySet Name="webapi_patient_basic_info" EntityType="Self.webapi_patient_basic_info" />
           <EntitySet Name="webapi_patient_business_address" EntityType="Self.webapi_patient_business_address" />
@@ -744,9 +744,9 @@ warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_services_availed' do
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="apiModelStoreContainer" CdmEntityContainer="ITWorksDEVEntities">
+        <EntityContainerMapping StorageEntityContainer="APIModelStoreContainer" CdmEntityContainer="APIEntities">
           <EntitySetMapping Name="webapi_patient_allergy">
-            <EntityTypeMapping TypeName="apiModel.webapi_patient_allergy">
+            <EntityTypeMapping TypeName="APIModel.webapi_patient_allergy">
               <MappingFragment StoreEntitySet="webapi_patient_allergy">
                 <ScalarProperty Name="patient_id" ColumnName="patient_id" />
                 <ScalarProperty Name="patient_allergy_id" ColumnName="patient_allergy_id" />
@@ -765,7 +765,7 @@ warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_services_availed' do
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="webapi_patient_basic_info">
-            <EntityTypeMapping TypeName="apiModel.webapi_patient_basic_info">
+            <EntityTypeMapping TypeName="APIModel.webapi_patient_basic_info">
               <MappingFragment StoreEntitySet="webapi_patient_basic_info">
                 <ScalarProperty Name="patient_id" ColumnName="patient_id" />
                 <ScalarProperty Name="hospital_number" ColumnName="hospital_number" />
@@ -788,7 +788,7 @@ warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_services_availed' do
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="webapi_patient_business_address">
-            <EntityTypeMapping TypeName="apiModel.webapi_patient_business_address">
+            <EntityTypeMapping TypeName="APIModel.webapi_patient_business_address">
               <MappingFragment StoreEntitySet="webapi_patient_business_address">
                 <ScalarProperty Name="patient_id" ColumnName="patient_id" />
                 <ScalarProperty Name="hospital_number" ColumnName="hospital_number" />
@@ -815,7 +815,7 @@ warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_services_availed' do
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="webapi_patient_business_phone">
-            <EntityTypeMapping TypeName="apiModel.webapi_patient_business_phone">
+            <EntityTypeMapping TypeName="APIModel.webapi_patient_business_phone">
               <MappingFragment StoreEntitySet="webapi_patient_business_phone">
                 <ScalarProperty Name="patient_id" ColumnName="patient_id" />
                 <ScalarProperty Name="hospital_number" ColumnName="hospital_number" />
@@ -828,7 +828,7 @@ warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_services_availed' do
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="webapi_patient_charges">
-            <EntityTypeMapping TypeName="apiModel.webapi_patient_charges">
+            <EntityTypeMapping TypeName="APIModel.webapi_patient_charges">
               <MappingFragment StoreEntitySet="webapi_patient_charges">
                 <ScalarProperty Name="item_type_rcd" ColumnName="item_type_rcd" />
                 <ScalarProperty Name="charge_type_rcd" ColumnName="charge_type_rcd" />
@@ -851,7 +851,7 @@ warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_services_availed' do
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="webapi_patient_email_add">
-            <EntityTypeMapping TypeName="apiModel.webapi_patient_email_add">
+            <EntityTypeMapping TypeName="APIModel.webapi_patient_email_add">
               <MappingFragment StoreEntitySet="webapi_patient_email_add">
                 <ScalarProperty Name="patient_id" ColumnName="patient_id" />
                 <ScalarProperty Name="hospital_number" ColumnName="hospital_number" />
@@ -863,7 +863,7 @@ warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_services_availed' do
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="webapi_patient_family_history">
-            <EntityTypeMapping TypeName="apiModel.webapi_patient_family_history">
+            <EntityTypeMapping TypeName="APIModel.webapi_patient_family_history">
               <MappingFragment StoreEntitySet="webapi_patient_family_history">
                 <ScalarProperty Name="patient_id" ColumnName="patient_id" />
                 <ScalarProperty Name="hospital_number" ColumnName="hospital_number" />
@@ -873,7 +873,7 @@ warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_services_availed' do
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="webapi_patient_home_address">
-            <EntityTypeMapping TypeName="apiModel.webapi_patient_home_address">
+            <EntityTypeMapping TypeName="APIModel.webapi_patient_home_address">
               <MappingFragment StoreEntitySet="webapi_patient_home_address">
                 <ScalarProperty Name="patient_id" ColumnName="patient_id" />
                 <ScalarProperty Name="hospital_number" ColumnName="hospital_number" />
@@ -898,7 +898,7 @@ warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_services_availed' do
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="webapi_patient_home_phone">
-            <EntityTypeMapping TypeName="apiModel.webapi_patient_home_phone">
+            <EntityTypeMapping TypeName="APIModel.webapi_patient_home_phone">
               <MappingFragment StoreEntitySet="webapi_patient_home_phone">
                 <ScalarProperty Name="patient_id" ColumnName="patient_id" />
                 <ScalarProperty Name="hospital_number" ColumnName="hospital_number" />
@@ -911,7 +911,7 @@ warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_services_availed' do
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="webapi_patient_medical_history">
-            <EntityTypeMapping TypeName="apiModel.webapi_patient_medical_history">
+            <EntityTypeMapping TypeName="APIModel.webapi_patient_medical_history">
               <MappingFragment StoreEntitySet="webapi_patient_medical_history">
                 <ScalarProperty Name="patient_id" ColumnName="patient_id" />
                 <ScalarProperty Name="hospital_number" ColumnName="hospital_number" />
@@ -921,7 +921,7 @@ warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_services_availed' do
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="webapi_patient_mobile_phone">
-            <EntityTypeMapping TypeName="apiModel.webapi_patient_mobile_phone">
+            <EntityTypeMapping TypeName="APIModel.webapi_patient_mobile_phone">
               <MappingFragment StoreEntitySet="webapi_patient_mobile_phone">
                 <ScalarProperty Name="patient_id" ColumnName="patient_id" />
                 <ScalarProperty Name="hospital_number" ColumnName="hospital_number" />
@@ -934,7 +934,7 @@ warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_services_availed' do
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="webapi_patient_previous_surgeries">
-            <EntityTypeMapping TypeName="apiModel.webapi_patient_previous_surgeries">
+            <EntityTypeMapping TypeName="APIModel.webapi_patient_previous_surgeries">
               <MappingFragment StoreEntitySet="webapi_patient_previous_surgeries">
                 <ScalarProperty Name="patient_id" ColumnName="patient_id" />
                 <ScalarProperty Name="hospital_number" ColumnName="hospital_number" />
@@ -944,7 +944,7 @@ warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_services_availed' do
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="webapi_patient_services_availed">
-            <EntityTypeMapping TypeName="apiModel.webapi_patient_services_availed">
+            <EntityTypeMapping TypeName="APIModel.webapi_patient_services_availed">
               <MappingFragment StoreEntitySet="webapi_patient_services_availed">
                 <ScalarProperty Name="charge_type_rcd" ColumnName="charge_type_rcd" />
                 <ScalarProperty Name="patient_visit_id" ColumnName="patient_visit_id" />
@@ -975,7 +975,7 @@ warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_services_availed' do
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

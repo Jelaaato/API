@@ -7,7 +7,7 @@ namespace backendapi.DataRepositories
 {
     public class history_repository
     {
-        private ITWorksDEVEntities db = new ITWorksDEVEntities();
+        private APIEntities db = new APIEntities();
 
         //Family History
         public IEnumerable<webapi_patient_family_history> fam_his()
