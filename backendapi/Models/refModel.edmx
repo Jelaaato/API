@@ -1,0 +1,518 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AmalgaTESTv80Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="charge_type_ref">
+          <Key>
+            <PropertyRef Name="charge_type_rcd" />
+          </Key>
+          <Property Name="charge_type_rcd" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="name_e" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="name_l" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="lu_user_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="lu_updated" Type="datetime" Nullable="false" />
+          <Property Name="must_not_change_flag" Type="bit" Nullable="false" />
+          <Property Name="seq_num" Type="smallint" />
+          <Property Name="active_status" Type="varchar" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="country_ref">
+          <Key>
+            <PropertyRef Name="country_rcd" />
+          </Key>
+          <Property Name="country_rcd" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="subregion_type_rcd" Type="varchar" MaxLength="2" />
+          <Property Name="idd_calling_code" Type="varchar" MaxLength="5" />
+          <Property Name="region_type_rcd" Type="varchar" MaxLength="2" />
+          <Property Name="name_e" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="name_l" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="lu_user_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="lu_updated" Type="datetime" Nullable="false" />
+          <Property Name="seq_num" Type="smallint" />
+          <Property Name="validate_city_flag" Type="bit" Nullable="false" />
+          <Property Name="active_status" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="local_address_support_flag" Type="bit" Nullable="false" />
+          <Property Name="must_not_change_flag" Type="bit" Nullable="false" />
+          <Property Name="iso_numeric_code" Type="smallint" Nullable="false" />
+          <Property Name="address_format" Type="varchar" MaxLength="500" />
+          <Property Name="iso_two_character_code" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="address_setting_id" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="marital_status_ref">
+          <Key>
+            <PropertyRef Name="marital_status_rcd" />
+          </Key>
+          <Property Name="marital_status_rcd" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="name_e" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="name_l" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="lu_user_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="lu_updated" Type="datetime" Nullable="false" />
+          <Property Name="seq_num" Type="smallint" />
+          <Property Name="active_status" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="must_not_change_flag" Type="bit" Nullable="false" />
+          <Property Name="display_code" Type="nvarchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="nationality_ref">
+          <Key>
+            <PropertyRef Name="nationality_rcd" />
+          </Key>
+          <Property Name="nationality_rcd" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="name_e" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="name_l" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="lu_user_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="lu_updated" Type="datetime" Nullable="false" />
+          <Property Name="active_status" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="seq_num" Type="smallint" />
+          <Property Name="must_not_change_flag" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="occupation_ref">
+          <Key>
+            <PropertyRef Name="occupation_rcd" />
+          </Key>
+          <Property Name="occupation_rcd" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="name_e" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="name_l" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="lu_user_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="lu_updated" Type="datetime" Nullable="false" />
+          <Property Name="seq_num" Type="smallint" />
+          <Property Name="active_status" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="must_not_change_flag" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="patient_education_level_ref">
+          <Key>
+            <PropertyRef Name="patient_education_level_rcd" />
+          </Key>
+          <Property Name="patient_education_level_rcd" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="name_e" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="name_l" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="active_status" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="seq_num" Type="smallint" />
+          <Property Name="lu_updated" Type="datetime" Nullable="false" />
+          <Property Name="lu_user_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="must_not_change_flag" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="primary_service_ref">
+          <Key>
+            <PropertyRef Name="primary_service_rcd" />
+          </Key>
+          <Property Name="primary_service_rcd" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="name_e" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="name_l" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="lu_user_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="lu_updated" Type="datetime" Nullable="false" />
+          <Property Name="active_status" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="seq_num" Type="smallint" />
+          <Property Name="must_not_change_flag" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sex_ref">
+          <Key>
+            <PropertyRef Name="sex_rcd" />
+          </Key>
+          <Property Name="sex_rcd" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="name_e" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="name_l" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="lu_user_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="lu_updated" Type="datetime" Nullable="false" />
+          <Property Name="seq_num" Type="smallint" />
+          <Property Name="active_status" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="must_not_change_flag" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="visit_type_ref">
+          <Key>
+            <PropertyRef Name="visit_type_rcd" />
+          </Key>
+          <Property Name="visit_type_rcd" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="name_e" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="visit_type_group_rcd" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="name_l" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="seq_num" Type="smallint" />
+          <Property Name="lu_updated" Type="datetime" Nullable="false" />
+          <Property Name="lu_user_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="active_status" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="must_not_change_flag" Type="bit" Nullable="false" />
+          <Property Name="exclude_from_count_flag" Type="bit" Nullable="false" />
+          <Property Name="default_charge_type_rcd" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="sequence_number_code" Type="varchar" MaxLength="10" />
+          <Property Name="visit_code_prefix" Type="varchar" MaxLength="10" />
+          <Property Name="er_registration_flag" Type="bit" Nullable="false" />
+          <Property Name="pre_admit_flag" Type="bit" Nullable="false" />
+          <Property Name="mandatory_caregiver_roles_flag" Type="bit" Nullable="false" />
+          <Property Name="auto_close_visits_flag" Type="bit" Nullable="false" />
+          <Property Name="reference_visit_flag" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="R_8358">
+          <End Role="charge_type_ref" Type="Self.charge_type_ref" Multiplicity="1" />
+          <End Role="visit_type_ref" Type="Self.visit_type_ref" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="charge_type_ref">
+              <PropertyRef Name="charge_type_rcd" />
+            </Principal>
+            <Dependent Role="visit_type_ref">
+              <PropertyRef Name="default_charge_type_rcd" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AmalgaTESTv80ModelStoreContainer">
+          <EntitySet Name="charge_type_ref" EntityType="Self.charge_type_ref" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="country_ref" EntityType="Self.country_ref" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="marital_status_ref" EntityType="Self.marital_status_ref" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="nationality_ref" EntityType="Self.nationality_ref" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="occupation_ref" EntityType="Self.occupation_ref" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="patient_education_level_ref" EntityType="Self.patient_education_level_ref" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="primary_service_ref" EntityType="Self.primary_service_ref" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sex_ref" EntityType="Self.sex_ref" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="visit_type_ref" EntityType="Self.visit_type_ref" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="R_8358" Association="Self.R_8358">
+            <End Role="charge_type_ref" EntitySet="charge_type_ref" />
+            <End Role="visit_type_ref" EntitySet="visit_type_ref" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AmalgaTESTv80Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="charge_type_ref">
+          <Key>
+            <PropertyRef Name="charge_type_rcd" />
+          </Key>
+          <Property Name="charge_type_rcd" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name_e" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name_l" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="lu_user_id" Type="Guid" Nullable="false" />
+          <Property Name="lu_updated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="must_not_change_flag" Type="Boolean" Nullable="false" />
+          <Property Name="seq_num" Type="Int16" />
+          <Property Name="active_status" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="visit_type_ref" Relationship="Self.R_8358" FromRole="charge_type_ref" ToRole="visit_type_ref" />
+        </EntityType>
+        <EntityType Name="country_ref">
+          <Key>
+            <PropertyRef Name="country_rcd" />
+          </Key>
+          <Property Name="country_rcd" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="subregion_type_rcd" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="idd_calling_code" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="region_type_rcd" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="name_e" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name_l" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="lu_user_id" Type="Guid" Nullable="false" />
+          <Property Name="lu_updated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="seq_num" Type="Int16" />
+          <Property Name="validate_city_flag" Type="Boolean" Nullable="false" />
+          <Property Name="active_status" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="local_address_support_flag" Type="Boolean" Nullable="false" />
+          <Property Name="must_not_change_flag" Type="Boolean" Nullable="false" />
+          <Property Name="iso_numeric_code" Type="Int16" Nullable="false" />
+          <Property Name="address_format" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="iso_two_character_code" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="address_setting_id" Type="Guid" />
+        </EntityType>
+        <EntityType Name="marital_status_ref">
+          <Key>
+            <PropertyRef Name="marital_status_rcd" />
+          </Key>
+          <Property Name="marital_status_rcd" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="name_e" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name_l" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="lu_user_id" Type="Guid" Nullable="false" />
+          <Property Name="lu_updated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="seq_num" Type="Int16" />
+          <Property Name="active_status" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="must_not_change_flag" Type="Boolean" Nullable="false" />
+          <Property Name="display_code" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="nationality_ref">
+          <Key>
+            <PropertyRef Name="nationality_rcd" />
+          </Key>
+          <Property Name="nationality_rcd" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name_e" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name_l" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="lu_user_id" Type="Guid" Nullable="false" />
+          <Property Name="lu_updated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="active_status" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="seq_num" Type="Int16" />
+          <Property Name="must_not_change_flag" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="occupation_ref">
+          <Key>
+            <PropertyRef Name="occupation_rcd" />
+          </Key>
+          <Property Name="occupation_rcd" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name_e" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name_l" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="lu_user_id" Type="Guid" Nullable="false" />
+          <Property Name="lu_updated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="seq_num" Type="Int16" />
+          <Property Name="active_status" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="must_not_change_flag" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="patient_education_level_ref">
+          <Key>
+            <PropertyRef Name="patient_education_level_rcd" />
+          </Key>
+          <Property Name="patient_education_level_rcd" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name_e" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name_l" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="active_status" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="seq_num" Type="Int16" />
+          <Property Name="lu_updated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="lu_user_id" Type="Guid" Nullable="false" />
+          <Property Name="must_not_change_flag" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="primary_service_ref">
+          <Key>
+            <PropertyRef Name="primary_service_rcd" />
+          </Key>
+          <Property Name="primary_service_rcd" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name_e" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name_l" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="lu_user_id" Type="Guid" Nullable="false" />
+          <Property Name="lu_updated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="active_status" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="seq_num" Type="Int16" />
+          <Property Name="must_not_change_flag" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sex_ref">
+          <Key>
+            <PropertyRef Name="sex_rcd" />
+          </Key>
+          <Property Name="sex_rcd" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="name_e" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name_l" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="lu_user_id" Type="Guid" Nullable="false" />
+          <Property Name="lu_updated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="seq_num" Type="Int16" />
+          <Property Name="active_status" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="must_not_change_flag" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="visit_type_ref">
+          <Key>
+            <PropertyRef Name="visit_type_rcd" />
+          </Key>
+          <Property Name="visit_type_rcd" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="name_e" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="visit_type_group_rcd" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="name_l" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="seq_num" Type="Int16" />
+          <Property Name="lu_updated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="lu_user_id" Type="Guid" Nullable="false" />
+          <Property Name="active_status" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="must_not_change_flag" Type="Boolean" Nullable="false" />
+          <Property Name="exclude_from_count_flag" Type="Boolean" Nullable="false" />
+          <Property Name="default_charge_type_rcd" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sequence_number_code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="visit_code_prefix" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="er_registration_flag" Type="Boolean" Nullable="false" />
+          <Property Name="pre_admit_flag" Type="Boolean" Nullable="false" />
+          <Property Name="mandatory_caregiver_roles_flag" Type="Boolean" Nullable="false" />
+          <Property Name="auto_close_visits_flag" Type="Boolean" Nullable="false" />
+          <Property Name="reference_visit_flag" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="charge_type_ref" Relationship="Self.R_8358" FromRole="visit_type_ref" ToRole="charge_type_ref" />
+        </EntityType>
+        <Association Name="R_8358">
+          <End Type="Self.charge_type_ref" Multiplicity="1" Role="charge_type_ref" />
+          <End Type="Self.visit_type_ref" Multiplicity="*" Role="visit_type_ref" />
+          <ReferentialConstraint>
+            <Principal Role="charge_type_ref">
+              <PropertyRef Name="charge_type_rcd" />
+            </Principal>
+            <Dependent Role="visit_type_ref">
+              <PropertyRef Name="default_charge_type_rcd" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AmalgaTESTRefEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="charge_type_ref" EntityType="Self.charge_type_ref" />
+          <EntitySet Name="country_ref" EntityType="Self.country_ref" />
+          <EntitySet Name="marital_status_ref" EntityType="Self.marital_status_ref" />
+          <EntitySet Name="nationality_ref" EntityType="Self.nationality_ref" />
+          <EntitySet Name="occupation_ref" EntityType="Self.occupation_ref" />
+          <EntitySet Name="patient_education_level_ref" EntityType="Self.patient_education_level_ref" />
+          <EntitySet Name="primary_service_ref" EntityType="Self.primary_service_ref" />
+          <EntitySet Name="sex_ref" EntityType="Self.sex_ref" />
+          <EntitySet Name="visit_type_ref" EntityType="Self.visit_type_ref" />
+          <AssociationSet Name="R_8358" Association="Self.R_8358">
+            <End EntitySet="charge_type_ref" Role="charge_type_ref" />
+            <End EntitySet="visit_type_ref" Role="visit_type_ref" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AmalgaTESTv80ModelStoreContainer" CdmEntityContainer="AmalgaTESTRefEntities">
+          <EntitySetMapping Name="charge_type_ref">
+            <EntityTypeMapping TypeName="AmalgaTESTv80Model.charge_type_ref">
+              <MappingFragment StoreEntitySet="charge_type_ref">
+                <ScalarProperty Name="charge_type_rcd" ColumnName="charge_type_rcd" />
+                <ScalarProperty Name="name_e" ColumnName="name_e" />
+                <ScalarProperty Name="name_l" ColumnName="name_l" />
+                <ScalarProperty Name="lu_user_id" ColumnName="lu_user_id" />
+                <ScalarProperty Name="lu_updated" ColumnName="lu_updated" />
+                <ScalarProperty Name="must_not_change_flag" ColumnName="must_not_change_flag" />
+                <ScalarProperty Name="seq_num" ColumnName="seq_num" />
+                <ScalarProperty Name="active_status" ColumnName="active_status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="country_ref">
+            <EntityTypeMapping TypeName="AmalgaTESTv80Model.country_ref">
+              <MappingFragment StoreEntitySet="country_ref">
+                <ScalarProperty Name="country_rcd" ColumnName="country_rcd" />
+                <ScalarProperty Name="subregion_type_rcd" ColumnName="subregion_type_rcd" />
+                <ScalarProperty Name="idd_calling_code" ColumnName="idd_calling_code" />
+                <ScalarProperty Name="region_type_rcd" ColumnName="region_type_rcd" />
+                <ScalarProperty Name="name_e" ColumnName="name_e" />
+                <ScalarProperty Name="name_l" ColumnName="name_l" />
+                <ScalarProperty Name="lu_user_id" ColumnName="lu_user_id" />
+                <ScalarProperty Name="lu_updated" ColumnName="lu_updated" />
+                <ScalarProperty Name="seq_num" ColumnName="seq_num" />
+                <ScalarProperty Name="validate_city_flag" ColumnName="validate_city_flag" />
+                <ScalarProperty Name="active_status" ColumnName="active_status" />
+                <ScalarProperty Name="local_address_support_flag" ColumnName="local_address_support_flag" />
+                <ScalarProperty Name="must_not_change_flag" ColumnName="must_not_change_flag" />
+                <ScalarProperty Name="iso_numeric_code" ColumnName="iso_numeric_code" />
+                <ScalarProperty Name="address_format" ColumnName="address_format" />
+                <ScalarProperty Name="iso_two_character_code" ColumnName="iso_two_character_code" />
+                <ScalarProperty Name="address_setting_id" ColumnName="address_setting_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="marital_status_ref">
+            <EntityTypeMapping TypeName="AmalgaTESTv80Model.marital_status_ref">
+              <MappingFragment StoreEntitySet="marital_status_ref">
+                <ScalarProperty Name="marital_status_rcd" ColumnName="marital_status_rcd" />
+                <ScalarProperty Name="name_e" ColumnName="name_e" />
+                <ScalarProperty Name="name_l" ColumnName="name_l" />
+                <ScalarProperty Name="lu_user_id" ColumnName="lu_user_id" />
+                <ScalarProperty Name="lu_updated" ColumnName="lu_updated" />
+                <ScalarProperty Name="seq_num" ColumnName="seq_num" />
+                <ScalarProperty Name="active_status" ColumnName="active_status" />
+                <ScalarProperty Name="must_not_change_flag" ColumnName="must_not_change_flag" />
+                <ScalarProperty Name="display_code" ColumnName="display_code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nationality_ref">
+            <EntityTypeMapping TypeName="AmalgaTESTv80Model.nationality_ref">
+              <MappingFragment StoreEntitySet="nationality_ref">
+                <ScalarProperty Name="nationality_rcd" ColumnName="nationality_rcd" />
+                <ScalarProperty Name="name_e" ColumnName="name_e" />
+                <ScalarProperty Name="name_l" ColumnName="name_l" />
+                <ScalarProperty Name="lu_user_id" ColumnName="lu_user_id" />
+                <ScalarProperty Name="lu_updated" ColumnName="lu_updated" />
+                <ScalarProperty Name="active_status" ColumnName="active_status" />
+                <ScalarProperty Name="seq_num" ColumnName="seq_num" />
+                <ScalarProperty Name="must_not_change_flag" ColumnName="must_not_change_flag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="occupation_ref">
+            <EntityTypeMapping TypeName="AmalgaTESTv80Model.occupation_ref">
+              <MappingFragment StoreEntitySet="occupation_ref">
+                <ScalarProperty Name="occupation_rcd" ColumnName="occupation_rcd" />
+                <ScalarProperty Name="name_e" ColumnName="name_e" />
+                <ScalarProperty Name="name_l" ColumnName="name_l" />
+                <ScalarProperty Name="lu_user_id" ColumnName="lu_user_id" />
+                <ScalarProperty Name="lu_updated" ColumnName="lu_updated" />
+                <ScalarProperty Name="seq_num" ColumnName="seq_num" />
+                <ScalarProperty Name="active_status" ColumnName="active_status" />
+                <ScalarProperty Name="must_not_change_flag" ColumnName="must_not_change_flag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="patient_education_level_ref">
+            <EntityTypeMapping TypeName="AmalgaTESTv80Model.patient_education_level_ref">
+              <MappingFragment StoreEntitySet="patient_education_level_ref">
+                <ScalarProperty Name="patient_education_level_rcd" ColumnName="patient_education_level_rcd" />
+                <ScalarProperty Name="name_e" ColumnName="name_e" />
+                <ScalarProperty Name="name_l" ColumnName="name_l" />
+                <ScalarProperty Name="active_status" ColumnName="active_status" />
+                <ScalarProperty Name="seq_num" ColumnName="seq_num" />
+                <ScalarProperty Name="lu_updated" ColumnName="lu_updated" />
+                <ScalarProperty Name="lu_user_id" ColumnName="lu_user_id" />
+                <ScalarProperty Name="must_not_change_flag" ColumnName="must_not_change_flag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="primary_service_ref">
+            <EntityTypeMapping TypeName="AmalgaTESTv80Model.primary_service_ref">
+              <MappingFragment StoreEntitySet="primary_service_ref">
+                <ScalarProperty Name="primary_service_rcd" ColumnName="primary_service_rcd" />
+                <ScalarProperty Name="name_e" ColumnName="name_e" />
+                <ScalarProperty Name="name_l" ColumnName="name_l" />
+                <ScalarProperty Name="lu_user_id" ColumnName="lu_user_id" />
+                <ScalarProperty Name="lu_updated" ColumnName="lu_updated" />
+                <ScalarProperty Name="active_status" ColumnName="active_status" />
+                <ScalarProperty Name="seq_num" ColumnName="seq_num" />
+                <ScalarProperty Name="must_not_change_flag" ColumnName="must_not_change_flag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sex_ref">
+            <EntityTypeMapping TypeName="AmalgaTESTv80Model.sex_ref">
+              <MappingFragment StoreEntitySet="sex_ref">
+                <ScalarProperty Name="sex_rcd" ColumnName="sex_rcd" />
+                <ScalarProperty Name="name_e" ColumnName="name_e" />
+                <ScalarProperty Name="name_l" ColumnName="name_l" />
+                <ScalarProperty Name="lu_user_id" ColumnName="lu_user_id" />
+                <ScalarProperty Name="lu_updated" ColumnName="lu_updated" />
+                <ScalarProperty Name="seq_num" ColumnName="seq_num" />
+                <ScalarProperty Name="active_status" ColumnName="active_status" />
+                <ScalarProperty Name="must_not_change_flag" ColumnName="must_not_change_flag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="visit_type_ref">
+            <EntityTypeMapping TypeName="AmalgaTESTv80Model.visit_type_ref">
+              <MappingFragment StoreEntitySet="visit_type_ref">
+                <ScalarProperty Name="visit_type_rcd" ColumnName="visit_type_rcd" />
+                <ScalarProperty Name="name_e" ColumnName="name_e" />
+                <ScalarProperty Name="visit_type_group_rcd" ColumnName="visit_type_group_rcd" />
+                <ScalarProperty Name="name_l" ColumnName="name_l" />
+                <ScalarProperty Name="seq_num" ColumnName="seq_num" />
+                <ScalarProperty Name="lu_updated" ColumnName="lu_updated" />
+                <ScalarProperty Name="lu_user_id" ColumnName="lu_user_id" />
+                <ScalarProperty Name="active_status" ColumnName="active_status" />
+                <ScalarProperty Name="must_not_change_flag" ColumnName="must_not_change_flag" />
+                <ScalarProperty Name="exclude_from_count_flag" ColumnName="exclude_from_count_flag" />
+                <ScalarProperty Name="default_charge_type_rcd" ColumnName="default_charge_type_rcd" />
+                <ScalarProperty Name="sequence_number_code" ColumnName="sequence_number_code" />
+                <ScalarProperty Name="visit_code_prefix" ColumnName="visit_code_prefix" />
+                <ScalarProperty Name="er_registration_flag" ColumnName="er_registration_flag" />
+                <ScalarProperty Name="pre_admit_flag" ColumnName="pre_admit_flag" />
+                <ScalarProperty Name="mandatory_caregiver_roles_flag" ColumnName="mandatory_caregiver_roles_flag" />
+                <ScalarProperty Name="auto_close_visits_flag" ColumnName="auto_close_visits_flag" />
+                <ScalarProperty Name="reference_visit_flag" ColumnName="reference_visit_flag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

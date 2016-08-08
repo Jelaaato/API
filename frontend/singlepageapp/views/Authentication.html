@@ -1,0 +1,54 @@
+﻿<div class="col-lg-10 col-lg-offset-1 col-xs-12">
+    <div class="jumbotron con" style="height:2420px;">
+        <h5><b>OAuth</b> is the main authorization framework used for AHMC API. To know and read more about OAuth, refer to 
+        <a target="_blank" href="http://tools.ietf.org/html/rfc6749" style="color:blue">RFC 6749 </a>.</h5>
+        <br />
+        <hr />
+        <br />
+       <h5>Below is the Abstract Protocol Flow of OAuth.</h5>
+        <br />
+        <img class="col-lg-6 col-lg-offset-3" style="padding-top:20px;" src="Content/OAuth1.PNG"/>
+        <img class="col-lg-6 col-lg-offset-3" src="Content/OAuth2.PNG" />
+        <img class="col-lg-6 col-lg-offset-3" src="Content/OAuth3.PNG" />
+        <br />
+        <hr class="col-xs-12" />
+        <br />
+        <br />
+        <h5 class="col-xs-12"><b>Token Based Authentication</b></h5>
+        <h5 class="col-xs-12">An access token will be used for authenticating a user for every request sent to the server.</h5>
+        <br />
+        <br />
+        <img class="col-xs-6 col-xs-offset-3" style="padding-top:20px;" src="Content/Capture.PNG" />
+        <br />
+        <img class="col-xs-6 col-xs-offset-3" src="Content/Capture1.PNG" style="top:2px;" />
+        <br />
+        <hr class="col-xs-12" />
+        <br />
+        <h5 class="col-xs-12"><b>Get Access and Refresh Token</b></h5>
+        <br />
+        <h5 style="padding-bottom:20px;"class="col-xs-12"><span style="color:#449D44;"><b>STEP 1</b></span> Send a POST request to the Authorization Server together with the given credentials, client_id and client_secret.</h5>
+        <img class="col-lg-8 col-lg-offset-2 col-xs-12 imgborder" style="height:120px;width:550px;" src="Content/grant_typepassword.PNG" />
+        <br />
+        <br />
+        <h5 style="padding-top:20px;padding-bottom:20px;" class="col-xs-12"><span style="color:#449D44;"><b>STEP 2</b></span> Once request is successful, an access and refresh token will be sent by the Authorization Server.</h5>
+        <br /><br />
+        <img class="col-lg-8 col-lg-offset-2 col-xs-12 imgborder" style="height:120px;width:550px;" src="Content/accesstoken.PNG" width="870" />
+        <br />
+        <br />
+        <h5 style="padding-top:20px;padding-bottom:20px;" class="col-xs-12"><span style="color:#449D44;"><b>STEP 3</b></span> The access token must be included in the Authorization header for every request to the resource server.</h5>
+        <!--<img class="col-lg-10 col-xs-12 imgborder" style="height:32px;width:795px;" src="Content/auth.PNG" />-->
+        <img class="col-lg-8 col-lg-offset-2 col-xs-12 imgborder" style="height:25px;width:540px;" src="Content/auth.PNG" />
+        <br />
+        <br />
+        <h5 style="padding-top:20px;padding-bottom:20px;" class="col-xs-12"><span style="color:#449D44;"><b>STEP 4</b></span> Request another access token to the authorization server using the refresh token.</h5>
+        <img class="col-lg-8 col-lg-offset-2 col-xs-12 imgborder" style="height:90px;width:550px;" src="Content/grnat_typerefresh_token.PNG" />
+        <br />
+        <br />
+        <hr class="col-xs-12 col-lg-12" />
+        <br />
+        <br />
+        <h5 style="padding-top:20px;padding-bottom:20px;" class="col-xs-12"><span style="color:#449D44;"><b>Take Note:</b></span></h5>
+        <h5 class="col-xs-12 col-lg-12"><span style="color:#449D44;"><b>1.</b></span> Access Token expires after 1 hour while refresh token lasts for 24 hours.</h5>
+        <h5 class="col-xs-12 col-lg-12"><span style="color:#449D44;"><b>2.</b></span> client_id and client_secret needs to be included for every request sent to the authorization server.</h5>
+</div>
+</div>

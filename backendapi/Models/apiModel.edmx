@@ -1,0 +1,987 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="apiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_allergy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="webapi_patient_allergy">
+          <Key>
+            <PropertyRef Name="patient_id" />
+            <PropertyRef Name="hospital_number" />
+            <PropertyRef Name="allergen" />
+            <PropertyRef Name="allergen_type_rcd" />
+            <PropertyRef Name="allergen_type" />
+            <PropertyRef Name="allergy_status_rcd" />
+            <PropertyRef Name="allergen_status" />
+            <PropertyRef Name="allergy_info_source_rcd" />
+            <PropertyRef Name="allergy_info_source" />
+          </Key>
+          <Property Name="patient_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="patient_allergy_id" Type="uniqueidentifier" />
+          <Property Name="hospital_number" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="registration_date" Type="date" />
+          <Property Name="allergen" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="allergen_type_rcd" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="allergen_type" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="allergy_status_rcd" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="allergen_status" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="allergy_info_source_rcd" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="allergy_info_source" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="allergy_reaction_rcd" Type="varchar" MaxLength="5" />
+          <Property Name="allergy_reaction" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_basic_info' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="webapi_patient_basic_info">
+          <Key>
+            <PropertyRef Name="patient_id" />
+            <PropertyRef Name="hospital_number" />
+            <PropertyRef Name="sex_rcd" />
+            <PropertyRef Name="sex" />
+            <PropertyRef Name="civil_status_rcd" />
+            <PropertyRef Name="civil_status" />
+            <PropertyRef Name="nationality_rcd" />
+            <PropertyRef Name="nationality" />
+            <PropertyRef Name="highest_educ_level_rcd" />
+            <PropertyRef Name="highest_education_level" />
+            <PropertyRef Name="occupation_rcd" />
+            <PropertyRef Name="occupation" />
+          </Key>
+          <Property Name="patient_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="hospital_number" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="registration_date" Type="date" />
+          <Property Name="last_name" Type="nvarchar" MaxLength="150" />
+          <Property Name="first_name" Type="nvarchar" MaxLength="150" />
+          <Property Name="middle_name" Type="nvarchar" MaxLength="150" />
+          <Property Name="date_of_birth" Type="datetime" />
+          <Property Name="sex_rcd" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="sex" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="civil_status_rcd" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="civil_status" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="nationality_rcd" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="nationality" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="highest_educ_level_rcd" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="highest_education_level" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="occupation_rcd" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="occupation" Type="nvarchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_business_address' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="webapi_patient_business_address">
+          <Key>
+            <PropertyRef Name="patient_id" />
+            <PropertyRef Name="hospital_number" />
+            <PropertyRef Name="residence_country_rcd" />
+            <PropertyRef Name="residence_country_name" />
+          </Key>
+          <Property Name="patient_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="hospital_number" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="registration_date" Type="date" />
+          <Property Name="residence_country_rcd" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="residence_country_name" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="business_address_postcode" Type="nvarchar" MaxLength="20" />
+          <Property Name="business_address_address_line_1" Type="nvarchar" MaxLength="80" />
+          <Property Name="business_address_address_line_2" Type="nvarchar" MaxLength="80" />
+          <Property Name="business_address_address_line_3" Type="nvarchar" MaxLength="80" />
+          <Property Name="business_address_sub_region" Type="nvarchar" MaxLength="60" />
+          <Property Name="business_address_sub_region_name" Type="nvarchar" MaxLength="150" />
+          <Property Name="business_address_region" Type="nvarchar" MaxLength="60" />
+          <Property Name="business_address_region_name" Type="nvarchar" MaxLength="150" />
+          <Property Name="business_address_city" Type="nvarchar" MaxLength="60" />
+          <Property Name="business_address_city_name" Type="nvarchar" MaxLength="150" />
+          <Property Name="business_address_country_rcd" Type="char" MaxLength="3" />
+          <Property Name="business_address_country_name" Type="nvarchar" MaxLength="150" />
+          <Property Name="business_address_mailing_address_flag" Type="bit" />
+          <Property Name="business_address_billing_address_flag" Type="bit" />
+          <Property Name="business_address_effective_from_date" Type="datetime" />
+          <Property Name="business_address_effective_until_date" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_business_phone' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="webapi_patient_business_phone">
+          <Key>
+            <PropertyRef Name="patient_id" />
+            <PropertyRef Name="hospital_number" />
+          </Key>
+          <Property Name="patient_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="hospital_number" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="registration_date" Type="date" />
+          <Property Name="business_phone_country_idd_dialing_code" Type="varchar" MaxLength="5" />
+          <Property Name="business_phone_area_code" Type="numeric" Precision="6" Scale="0" />
+          <Property Name="business_phone_number" Type="nvarchar" MaxLength="20" />
+          <Property Name="business_phone_extension" Type="numeric" Precision="6" Scale="0" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_charges' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="webapi_patient_charges">
+          <Key>
+            <PropertyRef Name="item_type_rcd" />
+            <PropertyRef Name="charge_type_rcd" />
+            <PropertyRef Name="charge_detail_id" />
+            <PropertyRef Name="patient_visit_id" />
+            <PropertyRef Name="hospital_number" />
+            <PropertyRef Name="unit_price" />
+            <PropertyRef Name="item_id" />
+            <PropertyRef Name="item_name" />
+          </Key>
+          <Property Name="item_type_rcd" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="charge_type_rcd" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="charge_detail_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="patient_visit_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="hospital_number" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="registration_date" Type="date" />
+          <Property Name="unit_price" Type="money" Nullable="false" />
+          <Property Name="quantity" Type="numeric" Precision="19" Scale="4" />
+          <Property Name="amount" Type="money" />
+          <Property Name="Serviced_Date" Type="date" />
+          <Property Name="Serviced_Time" Type="time" Precision="7" />
+          <Property Name="Charged_Date" Type="date" />
+          <Property Name="Charged_Time" Type="time" Precision="7" />
+          <Property Name="Closed_Date" Type="date" />
+          <Property Name="Closed_Time" Type="time" Precision="7" />
+          <Property Name="item_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="item_name" Type="nvarchar" MaxLength="450" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_email_add' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="webapi_patient_email_add">
+          <Key>
+            <PropertyRef Name="patient_id" />
+            <PropertyRef Name="hospital_number" />
+          </Key>
+          <Property Name="patient_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="hospital_number" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="registration_date" Type="date" />
+          <Property Name="business_email_address" Type="nvarchar" MaxLength="100" />
+          <Property Name="home_email_address" Type="nvarchar" MaxLength="100" />
+          <Property Name="personal_email_address" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_family_history' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="webapi_patient_family_history">
+          <Key>
+            <PropertyRef Name="patient_id" />
+            <PropertyRef Name="hospital_number" />
+          </Key>
+          <Property Name="patient_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="hospital_number" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="registration_date" Type="date" />
+          <Property Name="family_medical_history" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_home_address' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="webapi_patient_home_address">
+          <Key>
+            <PropertyRef Name="patient_id" />
+            <PropertyRef Name="hospital_number" />
+            <PropertyRef Name="residence_country_rcd" />
+            <PropertyRef Name="residence_country_name" />
+          </Key>
+          <Property Name="patient_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="hospital_number" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="registration_date" Type="date" />
+          <Property Name="residence_country_rcd" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="residence_country_name" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="home_address_postcode" Type="nvarchar" MaxLength="20" />
+          <Property Name="home_address_address_line_1" Type="nvarchar" MaxLength="80" />
+          <Property Name="home_address_address_line_2" Type="nvarchar" MaxLength="80" />
+          <Property Name="home_address_address_line_3" Type="nvarchar" MaxLength="80" />
+          <Property Name="home_address_sub_region" Type="nvarchar" MaxLength="60" />
+          <Property Name="home_address_sub_region_name" Type="nvarchar" MaxLength="150" />
+          <Property Name="home_address_region" Type="nvarchar" MaxLength="60" />
+          <Property Name="home_address_region_name" Type="nvarchar" MaxLength="150" />
+          <Property Name="home_address_city" Type="nvarchar" MaxLength="60" />
+          <Property Name="home_address_city_name" Type="nvarchar" MaxLength="150" />
+          <Property Name="home_address_country_rcd" Type="char" MaxLength="3" />
+          <Property Name="home_address_country_name" Type="nvarchar" MaxLength="150" />
+          <Property Name="home_address_effective_from_date" Type="datetime" />
+          <Property Name="home_address_effective_until_date" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_home_phone' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="webapi_patient_home_phone">
+          <Key>
+            <PropertyRef Name="patient_id" />
+            <PropertyRef Name="hospital_number" />
+          </Key>
+          <Property Name="patient_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="hospital_number" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="registration_date" Type="date" />
+          <Property Name="home_phone_country_idd_dialing_code" Type="varchar" MaxLength="5" />
+          <Property Name="home_phone_area_code" Type="numeric" Precision="6" Scale="0" />
+          <Property Name="home_phone_number" Type="nvarchar" MaxLength="20" />
+          <Property Name="home_phone_extension" Type="numeric" Precision="6" Scale="0" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_medical_history' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="webapi_patient_medical_history">
+          <Key>
+            <PropertyRef Name="patient_id" />
+            <PropertyRef Name="hospital_number" />
+          </Key>
+          <Property Name="patient_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="hospital_number" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="registration_date" Type="date" />
+          <Property Name="medical_history" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_mobile_phone' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="webapi_patient_mobile_phone">
+          <Key>
+            <PropertyRef Name="patient_id" />
+            <PropertyRef Name="hospital_number" />
+          </Key>
+          <Property Name="patient_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="hospital_number" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="registration_date" Type="date" />
+          <Property Name="mobile_phone_country_idd_dialing_code" Type="varchar" MaxLength="5" />
+          <Property Name="mobile_phone_area_code" Type="numeric" Precision="6" Scale="0" />
+          <Property Name="mobile_phone_number" Type="nvarchar" MaxLength="20" />
+          <Property Name="mobile_phone_extension" Type="numeric" Precision="6" Scale="0" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_previous_surgeries' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="webapi_patient_previous_surgeries">
+          <Key>
+            <PropertyRef Name="patient_id" />
+            <PropertyRef Name="hospital_number" />
+          </Key>
+          <Property Name="patient_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="hospital_number" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="registration_date" Type="date" />
+          <Property Name="previous_surgeries" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITWorksDEV.dbo.webapi_patient_services_availed' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="webapi_patient_services_availed">
+          <Key>
+            <PropertyRef Name="charge_type_rcd" />
+            <PropertyRef Name="patient_visit_id" />
+            <PropertyRef Name="patient_id" />
+            <PropertyRef Name="hospital_number" />
+            <PropertyRef Name="primary_service_rcd" />
+            <PropertyRef Name="visit_type_rcd" />
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="charge_type_rcd" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="patient_visit_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="patient_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="hospital_number" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="registration_date" Type="date" />
+          <Property Name="primary_service_rcd" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="primary_service_name" Type="nvarchar" MaxLength="150" />
+          <Property Name="visit_type_rcd" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="visit_type_name" Type="nvarchar" MaxLength="150" />
+          <Property Name="name" Type="nvarchar" MaxLength="450" Nullable="false" />
+          <Property Name="Date_of_Availment" Type="date" />
+          <Property Name="Time_of_Availment" Type="time" Precision="7" />
+        </EntityType>
+        <EntityContainer Name="apiModelStoreContainer">
+          <EntitySet Name="webapi_patient_allergy" EntityType="Self.webapi_patient_allergy" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [webapi_patient_allergy].[patient_id] AS [patient_id], 
+    [webapi_patient_allergy].[patient_allergy_id] AS [patient_allergy_id], 
+    [webapi_patient_allergy].[hospital_number] AS [hospital_number], 
+    [webapi_patient_allergy].[registration_date] AS [registration_date], 
+    [webapi_patient_allergy].[allergen] AS [allergen], 
+    [webapi_patient_allergy].[allergen_type_rcd] AS [allergen_type_rcd], 
+    [webapi_patient_allergy].[allergen_type] AS [allergen_type], 
+    [webapi_patient_allergy].[allergy_status_rcd] AS [allergy_status_rcd], 
+    [webapi_patient_allergy].[allergen_status] AS [allergen_status], 
+    [webapi_patient_allergy].[allergy_info_source_rcd] AS [allergy_info_source_rcd], 
+    [webapi_patient_allergy].[allergy_info_source] AS [allergy_info_source], 
+    [webapi_patient_allergy].[allergy_reaction_rcd] AS [allergy_reaction_rcd], 
+    [webapi_patient_allergy].[allergy_reaction] AS [allergy_reaction]
+    FROM [dbo].[webapi_patient_allergy] AS [webapi_patient_allergy]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="webapi_patient_basic_info" EntityType="Self.webapi_patient_basic_info" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [webapi_patient_basic_info].[patient_id] AS [patient_id], 
+    [webapi_patient_basic_info].[hospital_number] AS [hospital_number], 
+    [webapi_patient_basic_info].[registration_date] AS [registration_date], 
+    [webapi_patient_basic_info].[last_name] AS [last_name], 
+    [webapi_patient_basic_info].[first_name] AS [first_name], 
+    [webapi_patient_basic_info].[middle_name] AS [middle_name], 
+    [webapi_patient_basic_info].[date_of_birth] AS [date_of_birth], 
+    [webapi_patient_basic_info].[sex_rcd] AS [sex_rcd], 
+    [webapi_patient_basic_info].[sex] AS [sex], 
+    [webapi_patient_basic_info].[civil_status_rcd] AS [civil_status_rcd], 
+    [webapi_patient_basic_info].[civil_status] AS [civil_status], 
+    [webapi_patient_basic_info].[nationality_rcd] AS [nationality_rcd], 
+    [webapi_patient_basic_info].[nationality] AS [nationality], 
+    [webapi_patient_basic_info].[highest_educ_level_rcd] AS [highest_educ_level_rcd], 
+    [webapi_patient_basic_info].[highest_education_level] AS [highest_education_level], 
+    [webapi_patient_basic_info].[occupation_rcd] AS [occupation_rcd], 
+    [webapi_patient_basic_info].[occupation] AS [occupation]
+    FROM [dbo].[webapi_patient_basic_info] AS [webapi_patient_basic_info]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="webapi_patient_business_address" EntityType="Self.webapi_patient_business_address" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [webapi_patient_business_address].[patient_id] AS [patient_id], 
+    [webapi_patient_business_address].[hospital_number] AS [hospital_number], 
+    [webapi_patient_business_address].[registration_date] AS [registration_date], 
+    [webapi_patient_business_address].[residence_country_rcd] AS [residence_country_rcd], 
+    [webapi_patient_business_address].[residence_country_name] AS [residence_country_name], 
+    [webapi_patient_business_address].[business_address_postcode] AS [business_address_postcode], 
+    [webapi_patient_business_address].[business_address_address_line_1] AS [business_address_address_line_1], 
+    [webapi_patient_business_address].[business_address_address_line_2] AS [business_address_address_line_2], 
+    [webapi_patient_business_address].[business_address_address_line_3] AS [business_address_address_line_3], 
+    [webapi_patient_business_address].[business_address_sub_region] AS [business_address_sub_region], 
+    [webapi_patient_business_address].[business_address_sub_region_name] AS [business_address_sub_region_name], 
+    [webapi_patient_business_address].[business_address_region] AS [business_address_region], 
+    [webapi_patient_business_address].[business_address_region_name] AS [business_address_region_name], 
+    [webapi_patient_business_address].[business_address_city] AS [business_address_city], 
+    [webapi_patient_business_address].[business_address_city_name] AS [business_address_city_name], 
+    [webapi_patient_business_address].[business_address_country_rcd] AS [business_address_country_rcd], 
+    [webapi_patient_business_address].[business_address_country_name] AS [business_address_country_name], 
+    [webapi_patient_business_address].[business_address_mailing_address_flag] AS [business_address_mailing_address_flag], 
+    [webapi_patient_business_address].[business_address_billing_address_flag] AS [business_address_billing_address_flag], 
+    [webapi_patient_business_address].[business_address_effective_from_date] AS [business_address_effective_from_date], 
+    [webapi_patient_business_address].[business_address_effective_until_date] AS [business_address_effective_until_date]
+    FROM [dbo].[webapi_patient_business_address] AS [webapi_patient_business_address]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="webapi_patient_business_phone" EntityType="Self.webapi_patient_business_phone" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [webapi_patient_business_phone].[patient_id] AS [patient_id], 
+    [webapi_patient_business_phone].[hospital_number] AS [hospital_number], 
+    [webapi_patient_business_phone].[registration_date] AS [registration_date], 
+    [webapi_patient_business_phone].[business_phone_country_idd_dialing_code] AS [business_phone_country_idd_dialing_code], 
+    [webapi_patient_business_phone].[business_phone_area_code] AS [business_phone_area_code], 
+    [webapi_patient_business_phone].[business_phone_number] AS [business_phone_number], 
+    [webapi_patient_business_phone].[business_phone_extension] AS [business_phone_extension]
+    FROM [dbo].[webapi_patient_business_phone] AS [webapi_patient_business_phone]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="webapi_patient_charges" EntityType="Self.webapi_patient_charges" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [webapi_patient_charges].[item_type_rcd] AS [item_type_rcd], 
+    [webapi_patient_charges].[charge_type_rcd] AS [charge_type_rcd], 
+    [webapi_patient_charges].[charge_detail_id] AS [charge_detail_id], 
+    [webapi_patient_charges].[patient_visit_id] AS [patient_visit_id], 
+    [webapi_patient_charges].[hospital_number] AS [hospital_number], 
+    [webapi_patient_charges].[registration_date] AS [registration_date], 
+    [webapi_patient_charges].[unit_price] AS [unit_price], 
+    [webapi_patient_charges].[quantity] AS [quantity], 
+    [webapi_patient_charges].[amount] AS [amount], 
+    [webapi_patient_charges].[Serviced_Date] AS [Serviced_Date], 
+    [webapi_patient_charges].[Serviced_Time] AS [Serviced_Time], 
+    [webapi_patient_charges].[Charged_Date] AS [Charged_Date], 
+    [webapi_patient_charges].[Charged_Time] AS [Charged_Time], 
+    [webapi_patient_charges].[Closed_Date] AS [Closed_Date], 
+    [webapi_patient_charges].[Closed_Time] AS [Closed_Time], 
+    [webapi_patient_charges].[item_id] AS [item_id], 
+    [webapi_patient_charges].[item_name] AS [item_name]
+    FROM [dbo].[webapi_patient_charges] AS [webapi_patient_charges]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="webapi_patient_email_add" EntityType="Self.webapi_patient_email_add" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [webapi_patient_email_add].[patient_id] AS [patient_id], 
+    [webapi_patient_email_add].[hospital_number] AS [hospital_number], 
+    [webapi_patient_email_add].[registration_date] AS [registration_date], 
+    [webapi_patient_email_add].[business_email_address] AS [business_email_address], 
+    [webapi_patient_email_add].[home_email_address] AS [home_email_address], 
+    [webapi_patient_email_add].[personal_email_address] AS [personal_email_address]
+    FROM [dbo].[webapi_patient_email_add] AS [webapi_patient_email_add]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="webapi_patient_family_history" EntityType="Self.webapi_patient_family_history" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [webapi_patient_family_history].[patient_id] AS [patient_id], 
+    [webapi_patient_family_history].[hospital_number] AS [hospital_number], 
+    [webapi_patient_family_history].[registration_date] AS [registration_date], 
+    [webapi_patient_family_history].[family_medical_history] AS [family_medical_history]
+    FROM [dbo].[webapi_patient_family_history] AS [webapi_patient_family_history]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="webapi_patient_home_address" EntityType="Self.webapi_patient_home_address" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [webapi_patient_home_address].[patient_id] AS [patient_id], 
+    [webapi_patient_home_address].[hospital_number] AS [hospital_number], 
+    [webapi_patient_home_address].[registration_date] AS [registration_date], 
+    [webapi_patient_home_address].[residence_country_rcd] AS [residence_country_rcd], 
+    [webapi_patient_home_address].[residence_country_name] AS [residence_country_name], 
+    [webapi_patient_home_address].[home_address_postcode] AS [home_address_postcode], 
+    [webapi_patient_home_address].[home_address_address_line_1] AS [home_address_address_line_1], 
+    [webapi_patient_home_address].[home_address_address_line_2] AS [home_address_address_line_2], 
+    [webapi_patient_home_address].[home_address_address_line_3] AS [home_address_address_line_3], 
+    [webapi_patient_home_address].[home_address_sub_region] AS [home_address_sub_region], 
+    [webapi_patient_home_address].[home_address_sub_region_name] AS [home_address_sub_region_name], 
+    [webapi_patient_home_address].[home_address_region] AS [home_address_region], 
+    [webapi_patient_home_address].[home_address_region_name] AS [home_address_region_name], 
+    [webapi_patient_home_address].[home_address_city] AS [home_address_city], 
+    [webapi_patient_home_address].[home_address_city_name] AS [home_address_city_name], 
+    [webapi_patient_home_address].[home_address_country_rcd] AS [home_address_country_rcd], 
+    [webapi_patient_home_address].[home_address_country_name] AS [home_address_country_name], 
+    [webapi_patient_home_address].[home_address_effective_from_date] AS [home_address_effective_from_date], 
+    [webapi_patient_home_address].[home_address_effective_until_date] AS [home_address_effective_until_date]
+    FROM [dbo].[webapi_patient_home_address] AS [webapi_patient_home_address]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="webapi_patient_home_phone" EntityType="Self.webapi_patient_home_phone" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [webapi_patient_home_phone].[patient_id] AS [patient_id], 
+    [webapi_patient_home_phone].[hospital_number] AS [hospital_number], 
+    [webapi_patient_home_phone].[registration_date] AS [registration_date], 
+    [webapi_patient_home_phone].[home_phone_country_idd_dialing_code] AS [home_phone_country_idd_dialing_code], 
+    [webapi_patient_home_phone].[home_phone_area_code] AS [home_phone_area_code], 
+    [webapi_patient_home_phone].[home_phone_number] AS [home_phone_number], 
+    [webapi_patient_home_phone].[home_phone_extension] AS [home_phone_extension]
+    FROM [dbo].[webapi_patient_home_phone] AS [webapi_patient_home_phone]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="webapi_patient_medical_history" EntityType="Self.webapi_patient_medical_history" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [webapi_patient_medical_history].[patient_id] AS [patient_id], 
+    [webapi_patient_medical_history].[hospital_number] AS [hospital_number], 
+    [webapi_patient_medical_history].[registration_date] AS [registration_date], 
+    [webapi_patient_medical_history].[medical_history] AS [medical_history]
+    FROM [dbo].[webapi_patient_medical_history] AS [webapi_patient_medical_history]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="webapi_patient_mobile_phone" EntityType="Self.webapi_patient_mobile_phone" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [webapi_patient_mobile_phone].[patient_id] AS [patient_id], 
+    [webapi_patient_mobile_phone].[hospital_number] AS [hospital_number], 
+    [webapi_patient_mobile_phone].[registration_date] AS [registration_date], 
+    [webapi_patient_mobile_phone].[mobile_phone_country_idd_dialing_code] AS [mobile_phone_country_idd_dialing_code], 
+    [webapi_patient_mobile_phone].[mobile_phone_area_code] AS [mobile_phone_area_code], 
+    [webapi_patient_mobile_phone].[mobile_phone_number] AS [mobile_phone_number], 
+    [webapi_patient_mobile_phone].[mobile_phone_extension] AS [mobile_phone_extension]
+    FROM [dbo].[webapi_patient_mobile_phone] AS [webapi_patient_mobile_phone]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="webapi_patient_previous_surgeries" EntityType="Self.webapi_patient_previous_surgeries" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [webapi_patient_previous_surgeries].[patient_id] AS [patient_id], 
+    [webapi_patient_previous_surgeries].[hospital_number] AS [hospital_number], 
+    [webapi_patient_previous_surgeries].[registration_date] AS [registration_date], 
+    [webapi_patient_previous_surgeries].[previous_surgeries] AS [previous_surgeries]
+    FROM [dbo].[webapi_patient_previous_surgeries] AS [webapi_patient_previous_surgeries]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="webapi_patient_services_availed" EntityType="Self.webapi_patient_services_availed" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [webapi_patient_services_availed].[charge_type_rcd] AS [charge_type_rcd], 
+    [webapi_patient_services_availed].[patient_visit_id] AS [patient_visit_id], 
+    [webapi_patient_services_availed].[patient_id] AS [patient_id], 
+    [webapi_patient_services_availed].[hospital_number] AS [hospital_number], 
+    [webapi_patient_services_availed].[registration_date] AS [registration_date], 
+    [webapi_patient_services_availed].[primary_service_rcd] AS [primary_service_rcd], 
+    [webapi_patient_services_availed].[primary_service_name] AS [primary_service_name], 
+    [webapi_patient_services_availed].[visit_type_rcd] AS [visit_type_rcd], 
+    [webapi_patient_services_availed].[visit_type_name] AS [visit_type_name], 
+    [webapi_patient_services_availed].[name] AS [name], 
+    [webapi_patient_services_availed].[Date_of_Availment] AS [Date_of_Availment], 
+    [webapi_patient_services_availed].[Time_of_Availment] AS [Time_of_Availment]
+    FROM [dbo].[webapi_patient_services_availed] AS [webapi_patient_services_availed]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="apiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="webapi_patient_allergy">
+          <Key>
+            <PropertyRef Name="patient_id" />
+            <PropertyRef Name="hospital_number" />
+            <PropertyRef Name="allergen" />
+            <PropertyRef Name="allergen_type_rcd" />
+            <PropertyRef Name="allergen_type" />
+            <PropertyRef Name="allergy_status_rcd" />
+            <PropertyRef Name="allergen_status" />
+            <PropertyRef Name="allergy_info_source_rcd" />
+            <PropertyRef Name="allergy_info_source" />
+          </Key>
+          <Property Name="patient_id" Type="Guid" Nullable="false" />
+          <Property Name="patient_allergy_id" Type="Guid" />
+          <Property Name="hospital_number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="registration_date" Type="DateTime" Precision="0" />
+          <Property Name="allergen" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="allergen_type_rcd" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="allergen_type" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="allergy_status_rcd" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="allergen_status" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="allergy_info_source_rcd" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="allergy_info_source" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="allergy_reaction_rcd" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="allergy_reaction" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="webapi_patient_basic_info">
+          <Key>
+            <PropertyRef Name="patient_id" />
+            <PropertyRef Name="hospital_number" />
+            <PropertyRef Name="sex_rcd" />
+            <PropertyRef Name="sex" />
+            <PropertyRef Name="civil_status_rcd" />
+            <PropertyRef Name="civil_status" />
+            <PropertyRef Name="nationality_rcd" />
+            <PropertyRef Name="nationality" />
+            <PropertyRef Name="highest_educ_level_rcd" />
+            <PropertyRef Name="highest_education_level" />
+            <PropertyRef Name="occupation_rcd" />
+            <PropertyRef Name="occupation" />
+          </Key>
+          <Property Name="patient_id" Type="Guid" Nullable="false" />
+          <Property Name="hospital_number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="registration_date" Type="DateTime" Precision="0" />
+          <Property Name="last_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="first_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="middle_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="date_of_birth" Type="DateTime" Precision="3" />
+          <Property Name="sex_rcd" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="sex" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="civil_status_rcd" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="civil_status" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="nationality_rcd" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nationality" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="highest_educ_level_rcd" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="highest_education_level" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="occupation_rcd" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="occupation" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="webapi_patient_business_address">
+          <Key>
+            <PropertyRef Name="patient_id" />
+            <PropertyRef Name="hospital_number" />
+            <PropertyRef Name="residence_country_rcd" />
+            <PropertyRef Name="residence_country_name" />
+          </Key>
+          <Property Name="patient_id" Type="Guid" Nullable="false" />
+          <Property Name="hospital_number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="registration_date" Type="DateTime" Precision="0" />
+          <Property Name="residence_country_rcd" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="residence_country_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="business_address_postcode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="business_address_address_line_1" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="business_address_address_line_2" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="business_address_address_line_3" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="business_address_sub_region" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="business_address_sub_region_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="business_address_region" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="business_address_region_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="business_address_city" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="business_address_city_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="business_address_country_rcd" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="business_address_country_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="business_address_mailing_address_flag" Type="Boolean" />
+          <Property Name="business_address_billing_address_flag" Type="Boolean" />
+          <Property Name="business_address_effective_from_date" Type="DateTime" Precision="3" />
+          <Property Name="business_address_effective_until_date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="webapi_patient_business_phone">
+          <Key>
+            <PropertyRef Name="patient_id" />
+            <PropertyRef Name="hospital_number" />
+          </Key>
+          <Property Name="patient_id" Type="Guid" Nullable="false" />
+          <Property Name="hospital_number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="registration_date" Type="DateTime" Precision="0" />
+          <Property Name="business_phone_country_idd_dialing_code" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="business_phone_area_code" Type="Decimal" Precision="6" Scale="0" />
+          <Property Name="business_phone_number" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="business_phone_extension" Type="Decimal" Precision="6" Scale="0" />
+        </EntityType>
+        <EntityType Name="webapi_patient_charges">
+          <Key>
+            <PropertyRef Name="item_type_rcd" />
+            <PropertyRef Name="charge_type_rcd" />
+            <PropertyRef Name="charge_detail_id" />
+            <PropertyRef Name="patient_visit_id" />
+            <PropertyRef Name="hospital_number" />
+            <PropertyRef Name="unit_price" />
+            <PropertyRef Name="item_id" />
+            <PropertyRef Name="item_name" />
+          </Key>
+          <Property Name="item_type_rcd" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="charge_type_rcd" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="charge_detail_id" Type="Guid" Nullable="false" />
+          <Property Name="patient_visit_id" Type="Guid" Nullable="false" />
+          <Property Name="hospital_number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="registration_date" Type="DateTime" Precision="0" />
+          <Property Name="unit_price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="quantity" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="amount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Serviced_Date" Type="DateTime" Precision="0" />
+          <Property Name="Serviced_Time" Type="Time" Precision="7" />
+          <Property Name="Charged_Date" Type="DateTime" Precision="0" />
+          <Property Name="Charged_Time" Type="Time" Precision="7" />
+          <Property Name="Closed_Date" Type="DateTime" Precision="0" />
+          <Property Name="Closed_Time" Type="Time" Precision="7" />
+          <Property Name="item_id" Type="Guid" Nullable="false" />
+          <Property Name="item_name" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="webapi_patient_email_add">
+          <Key>
+            <PropertyRef Name="patient_id" />
+            <PropertyRef Name="hospital_number" />
+          </Key>
+          <Property Name="patient_id" Type="Guid" Nullable="false" />
+          <Property Name="hospital_number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="registration_date" Type="DateTime" Precision="0" />
+          <Property Name="business_email_address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="home_email_address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="personal_email_address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="webapi_patient_family_history">
+          <Key>
+            <PropertyRef Name="patient_id" />
+            <PropertyRef Name="hospital_number" />
+          </Key>
+          <Property Name="patient_id" Type="Guid" Nullable="false" />
+          <Property Name="hospital_number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="registration_date" Type="DateTime" Precision="0" />
+          <Property Name="family_medical_history" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="webapi_patient_home_address">
+          <Key>
+            <PropertyRef Name="patient_id" />
+            <PropertyRef Name="hospital_number" />
+            <PropertyRef Name="residence_country_rcd" />
+            <PropertyRef Name="residence_country_name" />
+          </Key>
+          <Property Name="patient_id" Type="Guid" Nullable="false" />
+          <Property Name="hospital_number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="registration_date" Type="DateTime" Precision="0" />
+          <Property Name="residence_country_rcd" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="residence_country_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="home_address_postcode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="home_address_address_line_1" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="home_address_address_line_2" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="home_address_address_line_3" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="home_address_sub_region" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="home_address_sub_region_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="home_address_region" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="home_address_region_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="home_address_city" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="home_address_city_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="home_address_country_rcd" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="home_address_country_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="home_address_effective_from_date" Type="DateTime" Precision="3" />
+          <Property Name="home_address_effective_until_date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="webapi_patient_home_phone">
+          <Key>
+            <PropertyRef Name="patient_id" />
+            <PropertyRef Name="hospital_number" />
+          </Key>
+          <Property Name="patient_id" Type="Guid" Nullable="false" />
+          <Property Name="hospital_number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="registration_date" Type="DateTime" Precision="0" />
+          <Property Name="home_phone_country_idd_dialing_code" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="home_phone_area_code" Type="Decimal" Precision="6" Scale="0" />
+          <Property Name="home_phone_number" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="home_phone_extension" Type="Decimal" Precision="6" Scale="0" />
+        </EntityType>
+        <EntityType Name="webapi_patient_medical_history">
+          <Key>
+            <PropertyRef Name="patient_id" />
+            <PropertyRef Name="hospital_number" />
+          </Key>
+          <Property Name="patient_id" Type="Guid" Nullable="false" />
+          <Property Name="hospital_number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="registration_date" Type="DateTime" Precision="0" />
+          <Property Name="medical_history" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="webapi_patient_mobile_phone">
+          <Key>
+            <PropertyRef Name="patient_id" />
+            <PropertyRef Name="hospital_number" />
+          </Key>
+          <Property Name="patient_id" Type="Guid" Nullable="false" />
+          <Property Name="hospital_number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="registration_date" Type="DateTime" Precision="0" />
+          <Property Name="mobile_phone_country_idd_dialing_code" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="mobile_phone_area_code" Type="Decimal" Precision="6" Scale="0" />
+          <Property Name="mobile_phone_number" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="mobile_phone_extension" Type="Decimal" Precision="6" Scale="0" />
+        </EntityType>
+        <EntityType Name="webapi_patient_previous_surgeries">
+          <Key>
+            <PropertyRef Name="patient_id" />
+            <PropertyRef Name="hospital_number" />
+          </Key>
+          <Property Name="patient_id" Type="Guid" Nullable="false" />
+          <Property Name="hospital_number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="registration_date" Type="DateTime" Precision="0" />
+          <Property Name="previous_surgeries" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="webapi_patient_services_availed">
+          <Key>
+            <PropertyRef Name="charge_type_rcd" />
+            <PropertyRef Name="patient_visit_id" />
+            <PropertyRef Name="patient_id" />
+            <PropertyRef Name="hospital_number" />
+            <PropertyRef Name="primary_service_rcd" />
+            <PropertyRef Name="visit_type_rcd" />
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="charge_type_rcd" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="patient_visit_id" Type="Guid" Nullable="false" />
+          <Property Name="patient_id" Type="Guid" Nullable="false" />
+          <Property Name="hospital_number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="registration_date" Type="DateTime" Precision="0" />
+          <Property Name="primary_service_rcd" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="primary_service_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="visit_type_rcd" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="visit_type_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Date_of_Availment" Type="DateTime" Precision="0" />
+          <Property Name="Time_of_Availment" Type="Time" Precision="7" />
+        </EntityType>
+        <EntityContainer Name="ITWorksDEVEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="webapi_patient_allergy" EntityType="Self.webapi_patient_allergy" />
+          <EntitySet Name="webapi_patient_basic_info" EntityType="Self.webapi_patient_basic_info" />
+          <EntitySet Name="webapi_patient_business_address" EntityType="Self.webapi_patient_business_address" />
+          <EntitySet Name="webapi_patient_business_phone" EntityType="Self.webapi_patient_business_phone" />
+          <EntitySet Name="webapi_patient_charges" EntityType="Self.webapi_patient_charges" />
+          <EntitySet Name="webapi_patient_email_add" EntityType="Self.webapi_patient_email_add" />
+          <EntitySet Name="webapi_patient_family_history" EntityType="Self.webapi_patient_family_history" />
+          <EntitySet Name="webapi_patient_home_address" EntityType="Self.webapi_patient_home_address" />
+          <EntitySet Name="webapi_patient_home_phone" EntityType="Self.webapi_patient_home_phone" />
+          <EntitySet Name="webapi_patient_medical_history" EntityType="Self.webapi_patient_medical_history" />
+          <EntitySet Name="webapi_patient_mobile_phone" EntityType="Self.webapi_patient_mobile_phone" />
+          <EntitySet Name="webapi_patient_previous_surgeries" EntityType="Self.webapi_patient_previous_surgeries" />
+          <EntitySet Name="webapi_patient_services_availed" EntityType="Self.webapi_patient_services_availed" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="apiModelStoreContainer" CdmEntityContainer="ITWorksDEVEntities">
+          <EntitySetMapping Name="webapi_patient_allergy">
+            <EntityTypeMapping TypeName="apiModel.webapi_patient_allergy">
+              <MappingFragment StoreEntitySet="webapi_patient_allergy">
+                <ScalarProperty Name="patient_id" ColumnName="patient_id" />
+                <ScalarProperty Name="patient_allergy_id" ColumnName="patient_allergy_id" />
+                <ScalarProperty Name="hospital_number" ColumnName="hospital_number" />
+                <ScalarProperty Name="registration_date" ColumnName="registration_date" />
+                <ScalarProperty Name="allergen" ColumnName="allergen" />
+                <ScalarProperty Name="allergen_type_rcd" ColumnName="allergen_type_rcd" />
+                <ScalarProperty Name="allergen_type" ColumnName="allergen_type" />
+                <ScalarProperty Name="allergy_status_rcd" ColumnName="allergy_status_rcd" />
+                <ScalarProperty Name="allergen_status" ColumnName="allergen_status" />
+                <ScalarProperty Name="allergy_info_source_rcd" ColumnName="allergy_info_source_rcd" />
+                <ScalarProperty Name="allergy_info_source" ColumnName="allergy_info_source" />
+                <ScalarProperty Name="allergy_reaction_rcd" ColumnName="allergy_reaction_rcd" />
+                <ScalarProperty Name="allergy_reaction" ColumnName="allergy_reaction" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webapi_patient_basic_info">
+            <EntityTypeMapping TypeName="apiModel.webapi_patient_basic_info">
+              <MappingFragment StoreEntitySet="webapi_patient_basic_info">
+                <ScalarProperty Name="patient_id" ColumnName="patient_id" />
+                <ScalarProperty Name="hospital_number" ColumnName="hospital_number" />
+                <ScalarProperty Name="registration_date" ColumnName="registration_date" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="middle_name" ColumnName="middle_name" />
+                <ScalarProperty Name="date_of_birth" ColumnName="date_of_birth" />
+                <ScalarProperty Name="sex_rcd" ColumnName="sex_rcd" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="civil_status_rcd" ColumnName="civil_status_rcd" />
+                <ScalarProperty Name="civil_status" ColumnName="civil_status" />
+                <ScalarProperty Name="nationality_rcd" ColumnName="nationality_rcd" />
+                <ScalarProperty Name="nationality" ColumnName="nationality" />
+                <ScalarProperty Name="highest_educ_level_rcd" ColumnName="highest_educ_level_rcd" />
+                <ScalarProperty Name="highest_education_level" ColumnName="highest_education_level" />
+                <ScalarProperty Name="occupation_rcd" ColumnName="occupation_rcd" />
+                <ScalarProperty Name="occupation" ColumnName="occupation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webapi_patient_business_address">
+            <EntityTypeMapping TypeName="apiModel.webapi_patient_business_address">
+              <MappingFragment StoreEntitySet="webapi_patient_business_address">
+                <ScalarProperty Name="patient_id" ColumnName="patient_id" />
+                <ScalarProperty Name="hospital_number" ColumnName="hospital_number" />
+                <ScalarProperty Name="registration_date" ColumnName="registration_date" />
+                <ScalarProperty Name="residence_country_rcd" ColumnName="residence_country_rcd" />
+                <ScalarProperty Name="residence_country_name" ColumnName="residence_country_name" />
+                <ScalarProperty Name="business_address_postcode" ColumnName="business_address_postcode" />
+                <ScalarProperty Name="business_address_address_line_1" ColumnName="business_address_address_line_1" />
+                <ScalarProperty Name="business_address_address_line_2" ColumnName="business_address_address_line_2" />
+                <ScalarProperty Name="business_address_address_line_3" ColumnName="business_address_address_line_3" />
+                <ScalarProperty Name="business_address_sub_region" ColumnName="business_address_sub_region" />
+                <ScalarProperty Name="business_address_sub_region_name" ColumnName="business_address_sub_region_name" />
+                <ScalarProperty Name="business_address_region" ColumnName="business_address_region" />
+                <ScalarProperty Name="business_address_region_name" ColumnName="business_address_region_name" />
+                <ScalarProperty Name="business_address_city" ColumnName="business_address_city" />
+                <ScalarProperty Name="business_address_city_name" ColumnName="business_address_city_name" />
+                <ScalarProperty Name="business_address_country_rcd" ColumnName="business_address_country_rcd" />
+                <ScalarProperty Name="business_address_country_name" ColumnName="business_address_country_name" />
+                <ScalarProperty Name="business_address_mailing_address_flag" ColumnName="business_address_mailing_address_flag" />
+                <ScalarProperty Name="business_address_billing_address_flag" ColumnName="business_address_billing_address_flag" />
+                <ScalarProperty Name="business_address_effective_from_date" ColumnName="business_address_effective_from_date" />
+                <ScalarProperty Name="business_address_effective_until_date" ColumnName="business_address_effective_until_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webapi_patient_business_phone">
+            <EntityTypeMapping TypeName="apiModel.webapi_patient_business_phone">
+              <MappingFragment StoreEntitySet="webapi_patient_business_phone">
+                <ScalarProperty Name="patient_id" ColumnName="patient_id" />
+                <ScalarProperty Name="hospital_number" ColumnName="hospital_number" />
+                <ScalarProperty Name="registration_date" ColumnName="registration_date" />
+                <ScalarProperty Name="business_phone_country_idd_dialing_code" ColumnName="business_phone_country_idd_dialing_code" />
+                <ScalarProperty Name="business_phone_area_code" ColumnName="business_phone_area_code" />
+                <ScalarProperty Name="business_phone_number" ColumnName="business_phone_number" />
+                <ScalarProperty Name="business_phone_extension" ColumnName="business_phone_extension" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webapi_patient_charges">
+            <EntityTypeMapping TypeName="apiModel.webapi_patient_charges">
+              <MappingFragment StoreEntitySet="webapi_patient_charges">
+                <ScalarProperty Name="item_type_rcd" ColumnName="item_type_rcd" />
+                <ScalarProperty Name="charge_type_rcd" ColumnName="charge_type_rcd" />
+                <ScalarProperty Name="charge_detail_id" ColumnName="charge_detail_id" />
+                <ScalarProperty Name="patient_visit_id" ColumnName="patient_visit_id" />
+                <ScalarProperty Name="hospital_number" ColumnName="hospital_number" />
+                <ScalarProperty Name="registration_date" ColumnName="registration_date" />
+                <ScalarProperty Name="unit_price" ColumnName="unit_price" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="Serviced_Date" ColumnName="Serviced_Date" />
+                <ScalarProperty Name="Serviced_Time" ColumnName="Serviced_Time" />
+                <ScalarProperty Name="Charged_Date" ColumnName="Charged_Date" />
+                <ScalarProperty Name="Charged_Time" ColumnName="Charged_Time" />
+                <ScalarProperty Name="Closed_Date" ColumnName="Closed_Date" />
+                <ScalarProperty Name="Closed_Time" ColumnName="Closed_Time" />
+                <ScalarProperty Name="item_id" ColumnName="item_id" />
+                <ScalarProperty Name="item_name" ColumnName="item_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webapi_patient_email_add">
+            <EntityTypeMapping TypeName="apiModel.webapi_patient_email_add">
+              <MappingFragment StoreEntitySet="webapi_patient_email_add">
+                <ScalarProperty Name="patient_id" ColumnName="patient_id" />
+                <ScalarProperty Name="hospital_number" ColumnName="hospital_number" />
+                <ScalarProperty Name="registration_date" ColumnName="registration_date" />
+                <ScalarProperty Name="business_email_address" ColumnName="business_email_address" />
+                <ScalarProperty Name="home_email_address" ColumnName="home_email_address" />
+                <ScalarProperty Name="personal_email_address" ColumnName="personal_email_address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webapi_patient_family_history">
+            <EntityTypeMapping TypeName="apiModel.webapi_patient_family_history">
+              <MappingFragment StoreEntitySet="webapi_patient_family_history">
+                <ScalarProperty Name="patient_id" ColumnName="patient_id" />
+                <ScalarProperty Name="hospital_number" ColumnName="hospital_number" />
+                <ScalarProperty Name="registration_date" ColumnName="registration_date" />
+                <ScalarProperty Name="family_medical_history" ColumnName="family_medical_history" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webapi_patient_home_address">
+            <EntityTypeMapping TypeName="apiModel.webapi_patient_home_address">
+              <MappingFragment StoreEntitySet="webapi_patient_home_address">
+                <ScalarProperty Name="patient_id" ColumnName="patient_id" />
+                <ScalarProperty Name="hospital_number" ColumnName="hospital_number" />
+                <ScalarProperty Name="registration_date" ColumnName="registration_date" />
+                <ScalarProperty Name="residence_country_rcd" ColumnName="residence_country_rcd" />
+                <ScalarProperty Name="residence_country_name" ColumnName="residence_country_name" />
+                <ScalarProperty Name="home_address_postcode" ColumnName="home_address_postcode" />
+                <ScalarProperty Name="home_address_address_line_1" ColumnName="home_address_address_line_1" />
+                <ScalarProperty Name="home_address_address_line_2" ColumnName="home_address_address_line_2" />
+                <ScalarProperty Name="home_address_address_line_3" ColumnName="home_address_address_line_3" />
+                <ScalarProperty Name="home_address_sub_region" ColumnName="home_address_sub_region" />
+                <ScalarProperty Name="home_address_sub_region_name" ColumnName="home_address_sub_region_name" />
+                <ScalarProperty Name="home_address_region" ColumnName="home_address_region" />
+                <ScalarProperty Name="home_address_region_name" ColumnName="home_address_region_name" />
+                <ScalarProperty Name="home_address_city" ColumnName="home_address_city" />
+                <ScalarProperty Name="home_address_city_name" ColumnName="home_address_city_name" />
+                <ScalarProperty Name="home_address_country_rcd" ColumnName="home_address_country_rcd" />
+                <ScalarProperty Name="home_address_country_name" ColumnName="home_address_country_name" />
+                <ScalarProperty Name="home_address_effective_from_date" ColumnName="home_address_effective_from_date" />
+                <ScalarProperty Name="home_address_effective_until_date" ColumnName="home_address_effective_until_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webapi_patient_home_phone">
+            <EntityTypeMapping TypeName="apiModel.webapi_patient_home_phone">
+              <MappingFragment StoreEntitySet="webapi_patient_home_phone">
+                <ScalarProperty Name="patient_id" ColumnName="patient_id" />
+                <ScalarProperty Name="hospital_number" ColumnName="hospital_number" />
+                <ScalarProperty Name="registration_date" ColumnName="registration_date" />
+                <ScalarProperty Name="home_phone_country_idd_dialing_code" ColumnName="home_phone_country_idd_dialing_code" />
+                <ScalarProperty Name="home_phone_area_code" ColumnName="home_phone_area_code" />
+                <ScalarProperty Name="home_phone_number" ColumnName="home_phone_number" />
+                <ScalarProperty Name="home_phone_extension" ColumnName="home_phone_extension" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webapi_patient_medical_history">
+            <EntityTypeMapping TypeName="apiModel.webapi_patient_medical_history">
+              <MappingFragment StoreEntitySet="webapi_patient_medical_history">
+                <ScalarProperty Name="patient_id" ColumnName="patient_id" />
+                <ScalarProperty Name="hospital_number" ColumnName="hospital_number" />
+                <ScalarProperty Name="registration_date" ColumnName="registration_date" />
+                <ScalarProperty Name="medical_history" ColumnName="medical_history" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webapi_patient_mobile_phone">
+            <EntityTypeMapping TypeName="apiModel.webapi_patient_mobile_phone">
+              <MappingFragment StoreEntitySet="webapi_patient_mobile_phone">
+                <ScalarProperty Name="patient_id" ColumnName="patient_id" />
+                <ScalarProperty Name="hospital_number" ColumnName="hospital_number" />
+                <ScalarProperty Name="registration_date" ColumnName="registration_date" />
+                <ScalarProperty Name="mobile_phone_country_idd_dialing_code" ColumnName="mobile_phone_country_idd_dialing_code" />
+                <ScalarProperty Name="mobile_phone_area_code" ColumnName="mobile_phone_area_code" />
+                <ScalarProperty Name="mobile_phone_number" ColumnName="mobile_phone_number" />
+                <ScalarProperty Name="mobile_phone_extension" ColumnName="mobile_phone_extension" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webapi_patient_previous_surgeries">
+            <EntityTypeMapping TypeName="apiModel.webapi_patient_previous_surgeries">
+              <MappingFragment StoreEntitySet="webapi_patient_previous_surgeries">
+                <ScalarProperty Name="patient_id" ColumnName="patient_id" />
+                <ScalarProperty Name="hospital_number" ColumnName="hospital_number" />
+                <ScalarProperty Name="registration_date" ColumnName="registration_date" />
+                <ScalarProperty Name="previous_surgeries" ColumnName="previous_surgeries" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webapi_patient_services_availed">
+            <EntityTypeMapping TypeName="apiModel.webapi_patient_services_availed">
+              <MappingFragment StoreEntitySet="webapi_patient_services_availed">
+                <ScalarProperty Name="charge_type_rcd" ColumnName="charge_type_rcd" />
+                <ScalarProperty Name="patient_visit_id" ColumnName="patient_visit_id" />
+                <ScalarProperty Name="patient_id" ColumnName="patient_id" />
+                <ScalarProperty Name="hospital_number" ColumnName="hospital_number" />
+                <ScalarProperty Name="registration_date" ColumnName="registration_date" />
+                <ScalarProperty Name="primary_service_rcd" ColumnName="primary_service_rcd" />
+                <ScalarProperty Name="primary_service_name" ColumnName="primary_service_name" />
+                <ScalarProperty Name="visit_type_rcd" ColumnName="visit_type_rcd" />
+                <ScalarProperty Name="visit_type_name" ColumnName="visit_type_name" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="Date_of_Availment" ColumnName="Date_of_Availment" />
+                <ScalarProperty Name="Time_of_Availment" ColumnName="Time_of_Availment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

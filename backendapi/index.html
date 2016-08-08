@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="AuthApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API'S </title>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/modernizr-2.8.3.js"></script>
+    <script src="Scripts/jquery-2.1.4.min.js"></script>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.js"></script>
+    <link href="Content/Site.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <div class="container">
+        <!--Header-->
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2 col-lg-8 col-lg-offset-2 margin-top">
+                <img class="rotate" src="/Content/_logo.jpg" width="90" height="90" style=" box-shadow:8px 8px 5px grey; float:left; border: 1px solid black;" />
+                <h1 style="font-family:'Roboto';float:right; vertical-align:middle;">
+                    Asian Hospital and Medical Center
+                    <br />
+                    <small>AHMC API</small>
+                </h1>
+            </div>
+        </div>
+
+        <!--Image Banner-->
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1 col-lg-10 col-lg-offset-1">
+                <img src="/Content/asian3.jpg" class="img-responsive margin-top" style="width: 100%; height: 400px; border-radius: 2px;" />
+            </div>
+
+            <!--Navigation Bar-->
+            <div class="col-xs-10 col-xs-offset-1 col-lg-10 col-lg-offset-1">
+                <div class="navbar navbar-default margin-top" style="background-color: #449D44;" role="navigation" data-ng-controller="IndexController">
+                    <div class="navbar-header">
+                        <button class="btn btn-success navbar-toggle" data-ng-click="navbarExpanded = !navbarExpanded">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                        </button>
+                        <a class="navbar-brand" style="color:black;" href="#/">Home</a>
+                    </div>
+                    <div class="collapse navbar-collapse" data-collapse="!navbarExpanded">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown" style="background-color:#449D44;">
+                                <a class="dropdown-toggle" style="background-color:#449D44;color:black;" data-toggle="dropdown">API Documentation<span class="caret"></span></a>
+                                <ul class="dropdown-menu" style="background-color:#449D44;">
+                                    <li class="dropdown-header" style="color:black;">API Methods</li>
+                                    <li><a href="#/get" style="color:black;">GET</a></li>
+                                    <li><a href="#/post" style="color:black;">POST</a></li>
+                                    <li><a href="#/put" style="color:black;">PUT</a></li>
+                                    <li><a href="#/del" style="color:black;">DELETE</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#auth" style="color:black;">Authentication</a></li>
+                                </ul>
+                            </li>
+                            <!--<li><a style="color:black;" href="#/signin">Register</a></li>-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-10 col-xs-offset-1 col-lg-10 col-lg-offset-1"><hr /></div>
+        </div>
+        <!--View-->
+        <div class="row">
+            <div data-ng-view>
+
+            </div>
+        </div>
+        <hr class="col-xs-10 col-xs-offset-1 col-lg-10 col-lg-offset-1" />
+        <footer class="col-xs-10 col-xs-offset-1 col-lg-10 col-lg-offset-1"><h6 style="color:gray;"><i>Asian Hospital and Medical Center API 2015</i></h6></footer>
+    </div>
+    <script src="Scripts/angular-local-storage.js"></script>
+    <script src="singlepageapp/app.js"></script>
+    <script src="singlepageapp/services/authenticationInterceptor.js"></script>
+    <script src="singlepageapp/services/authenticationService.js"></script>
+    <script src="singlepageapp/controllers/IndexController.js"></script>
+    <script src="singlepageapp/controllers/HomePageController.js"></script>
+    <script src="singlepageapp/controllers/LoginController.js"></script>
+    <script src="singlepageapp/controllers/SignInController.js"></script>
+    <script src="singlepageapp/services/RefreshTokensManagerService.js"></script>
+    <script src="singlepageapp/controllers/RefreshTokensManagerController.js"></script>
+</body>
+</html>
